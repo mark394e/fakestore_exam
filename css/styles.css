@@ -1,1 +1,32 @@
 @import "variables.css";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--primary_color);
+    color: var(--color_text_dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--display_font);
+  font-weight: 400;
+}
+
+h1 {font-size: var(--h1_size);}
+
+h2 {font-size: var(--h2_size);}
+
+h3 {font-size: var(--h3_size);}
+
+h4 {font-size: var(--h4_size);}
+
+h5 {font-size: var(--h5_size);}
+
+h6 {font-size: var(--h6_size);}
+
+p  {font-family: var(--body_font);}
+
