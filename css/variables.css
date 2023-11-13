@@ -1,22 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap");
 
-:root{
+:root {
+  /* Fonts */
+  --display_font: "Lora", serif;
+  --body_font: "Poppins", sans-serif;
+  --h1_title_size: 2.827rem;
+  --h1_size: 1.999rem;
+  --h2_size: 1.414rem;
+  --h3_size: 1.121rem;
+  --h4_size: 0.88rem;
+  --h5_size: 0.7rem;
+  --h6_size: 0.56rem;
+
+  /* Colors */
+  --primary_color: #dedede;
+  --secondary_color: #611000;
+  --tertiary_color: #00615c;
+  --success_color: #00b25c;
+  --danger_color: #b31e00;
+  --color_text_dark: #515151;
+  --overlay_color: rgba(0, 0, 0, 0.7);
+
+  /* Box Shadows */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+
+  /* Transition */
+  --transition: 0.175s ease-in-out;
+}
+
+@media (min-width: 480px) {
+  :root {
     /* Fonts */
-    --display_font: 'Lora', serif;
-    --body_font: 'Poppins', sans-serif;
+    --h1_size: 2.827rem;
+    --h2_size: 1.999rem;
+    --h3_size: 1.414rem;
+    --h4_size: 1.121rem;
+    --h5_size: 0.88rem;
+    --h6_size: 0.7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Fonts */
+    --h1_size: 3.998rem;
+    --h2_size: 2.827rem;
+    --h3_size: 1.999rem;
+    --h4_size: 1.414rem;
+    --h5_size: 1.121rem;
+    --h6_size: 0.88rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    /* Fonts */
     --h1_size: 5.653rem;
     --h2_size: 3.998rem;
     --h3_size: 2.827rem;
     --h4_size: 1.999rem;
     --h5_size: 1.414rem;
     --h6_size: 1.121rem;
-
-    /* Colors */
-    --primary_color: #dedede;
-    --secondary_color: #611000;
-    --tertiary_color: #00615c;
-    --success_color: #00b25c;
-    --danger_color: #b31e00;
-    --color_text_dark: #515151;
-
+  }
 }
