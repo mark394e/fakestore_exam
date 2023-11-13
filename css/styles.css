@@ -6,6 +6,15 @@
     box-sizing: border-box;
 }
 
+img{
+    max-width: 100%;
+    size: cover;
+}
+
+header{
+  display: grid;
+}
+
 body{
     background-color: var(--primary_color);
     color: var(--color_text_dark);
