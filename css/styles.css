@@ -69,6 +69,16 @@ button {
   font-family: var(--body_font);
 }
 
+.error-message {
+  color: var(--danger_color);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-border {
+  border: 1px solid var(--danger_color);
+}
+
 .strong-link {
   color: var(--tertiary_color);
   font-weight: 700;
