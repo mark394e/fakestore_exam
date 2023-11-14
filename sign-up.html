@@ -17,14 +17,14 @@
     </header>
     <main>
       <h2 class="green-title">Sign up</h2>
-      <form action="POST" class="sign-up-form">
+      <form class="sign-up-form">
         <label for="email">Email</label>
-        <input type="email" />
+        <input type="email" name="email" id="email" />
         <label for="password">Password</label>
-        <input type="password" />
-        <label for="password">Confirm Password</label>
-        <input type="password" />
-        <button class="cta">Sign up</button>
+        <input type="password" name="password" id="password" />
+        <label for="confirm_password">Confirm Password</label>
+        <input type="password" name="confirm_password" id="confirm_password" />
+        <button type="submit" class="cta sign-up-btn">Sign up</button>
       </form>
       <footer>
         <p>Already a member? Log in <a href="index.html" class="strong-link">here</a></p>
