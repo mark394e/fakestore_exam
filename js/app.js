@@ -21,8 +21,11 @@ function validate() {
   const isValidConfirmPassword = user_password === user_confirm_password;
 
   if (!isValidPassword) {
+    const password_input_field = document.getElementById("password_login");
+    const error_message = document.createElement("p");
+    password_input_field.appendChild(error_message);
     alert(
-      "Password must contain 8-20 characters, at least one uppercase letter, one lowercase letter, one number and one special character."
+      "Password must be between 8 to 20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character."
     );
   }
 
