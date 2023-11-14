@@ -158,3 +158,8 @@ header::after {
 .log-in-form .cta {
   margin-top: 2rem;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+}

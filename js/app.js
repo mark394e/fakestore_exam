@@ -65,13 +65,5 @@ async function sign_up(user_email, user_password) {
     console.log(error);
   }
 
-  start_session(user_email);
   window.location.href = "index.html";
-}
-
-//################################################
-
-function start_session(user_email) {
-  alert("You have successfully signed up!");
-  sessionStorage.setItem("email", user_email);
 }

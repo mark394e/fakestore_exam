@@ -9,6 +9,16 @@
       "email": "@b",
       "password": "b",
       "id": 2
+    },
+    {
+      "email": "markuslund@live.dk",
+      "password": "Ayanami1997!",
+      "id": 3
+    },
+    {
+      "email": "anna@lester.dk",
+      "password": "Lester1234!",
+      "id": 4
     }
   ]
 }
