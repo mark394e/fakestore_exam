@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles_products.css" />
+    <script src="js/script_singleview.js" defer></script>
+    <title>ODDMENTS | Product</title>
+  </head>
+  <body>
+    <main>
+      <button class="go-back-button">
+        <svg
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="back-arrow-icon"
+        >
+          <path
+            d="M7.825 13L13.425 18.6L12 20L4 12L12 4L13.425 5.4L7.825 11H20V13H7.825Z"
+            fill="#515151"
+          />
+        </svg>
+
+        Back
+      </button>
+
+      <section class="single-product-wrapper">
+        <article class="single-product">
+          <div class="img-product-wrapper">
+            <img src="" alt="" class="single-product-img" />
+          </div>
+          <div class="text-wrapper">
+            <h1 class="h1-product-title"></h1>
+            <h2 class="h2-product-category"></h2>
+            <p class="price-desc">Price</p>
+            <p class="price"></p>
+            <p class="product-desc"></p>
+            <div class="btn-wrapper-singleview">
+              <button class="add-to-cart-btn-singleview">Add to cart</button>
+            </div>
+            <div class="accordion-wrapper">
+              <button class="accordion-btn">
+                Product details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="open-accordion-icon"
+                >
+                  <path
+                    d="M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z"
+                    fill="#515151"
+                  />
+                </svg>
+              </button>
+              <div class="panel">
+                <p class="product-rating-desc">
+                  We have a rating system on our products to acknowledge the
+                  buyer's opinion and experience, and we hope you find it
+                  useful. This product is rated as follows:
+                </p>
+                <p class="accoridon-product-content"></p>
+              </div>
+              <button class="accordion-btn">
+                Delivery details
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="open-accordion-icon"
+                >
+                  <path
+                    d="M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z"
+                    fill="#515151"
+                  />
+                </svg>
+              </button>
+              <div class="panel">
+                <p class="express-delivery-desc">
+                  <span class="express-span">Express delivery:</span>
+                  Your order will be dispatched the same day as the order is
+                  placed and will arrive at the selected address no later than
+                  one day after dispatch.
+                </p>
+                <p class="standard-delivery-desc">
+                  <span class="standard-span">Standard delivery:</span>
+                  Your order will be dispatched within 1-2 days, and arrive at
+                  the selected address no later than 3-5 days after ordering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
