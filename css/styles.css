@@ -69,6 +69,14 @@ button {
   font-family: var(--body_font);
 }
 
+input {
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .error-message {
   color: var(--danger_color);
   font-size: 0.8rem;
@@ -76,7 +84,17 @@ button {
 }
 
 .error-border {
-  border: 1px solid var(--danger_color);
+  border: 2px solid var(--danger_color);
+}
+
+.success-message {
+  color: var(--success_color);
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-border {
+  border: 2px solid var(--success_color);
 }
 
 .strong-link {
@@ -160,7 +178,6 @@ header::after {
 .log-in-form input {
   margin-bottom: 1.25rem;
   padding: 0.5rem;
-  border: none;
   box-shadow: var(--box-shadow);
 }
 

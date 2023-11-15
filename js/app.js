@@ -1,57 +1,82 @@
 "use strict";
 
-//document.querySelector('.cta.sign-up-btn').addEventListener('click', initiate);
+const email_RegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+const password_RegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,20}$/;
+
+document.querySelector("#email").addEventListener("blur", function () {
+  validate_email();
+});
+
+document.querySelector("#password").addEventListener("blur", function () {
+  validate_password();
+});
+
+document.querySelector("#confirm_password").addEventListener("blur", function () {
+  validate_confirm_password();
+});
+
 document.querySelector(".sign-up-form").addEventListener("submit", function (event) {
   event.preventDefault();
   validate_sign_up();
 });
 
-//################################################
-
 function validate_sign_up() {
-  const user_password = document.getElementById("password").value;
-  const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,20}$/;
-  const isValidPassword = passwordRegEx.test(user_password);
-
   const user_email = document.getElementById("email").value;
-  const emailRegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const isValidEmail = emailRegEx.test(user_email);
-
-  const user_confirm_password = document.getElementById("confirm_password").value;
-  const isValidConfirmPassword = user_password === user_confirm_password;
-
-  if (!isValidPassword) {
-    const password_input_field = document.getElementById("password");
-    const error_message_element = password_input_field.insertAdjacentElement(
-      "afterend",
-      document.createElement("p")
-    );
-    error_message_element.classList.add("error-message");
-    error_message_element.innerHTML =
-      "Password must be between 8 to 20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.";
-    password_input_field.style.border = "1px solid var(--danger_color)";
-    password_input_field.focus();
-    return;
-  }
-
-  if (!isValidEmail) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  if (!isValidConfirmPassword) {
-    alert("Passwords do not match.");
-    return;
-  }
-
-  console.log(isValidPassword);
-  console.log(isValidEmail);
-  console.log(isValidConfirmPassword);
-
+  const user_password = document.getElementById("password").value;
   sign_up(user_email, user_password);
 }
 
-//################################################
+function validate_email() {
+  const user_email = document.getElementById("email").value;
+  const isValidEmail = email_RegEx.test(user_email);
+  const email_input_field = document.getElementById("email");
+  const error_message = document.querySelector("#email-error");
+
+  email_input_field.classList.remove("success-border");
+
+  if (!isValidEmail) {
+    error_message.classList.remove("hidden");
+    return;
+  }
+
+  error_message.classList.add("hidden");
+  email_input_field.classList.add("success-border");
+}
+
+function validate_password() {
+  const user_password = document.getElementById("password").value;
+  const isValidPassword = password_RegEx.test(user_password);
+  const password_input_field = document.getElementById("password");
+  const error_message = document.querySelector("#password-error");
+
+  password_input_field.classList.remove("success-border");
+
+  if (!isValidPassword) {
+    error_message.classList.remove("hidden");
+    return;
+  }
+
+  error_message.classList.add("hidden");
+  password_input_field.classList.add("success-border");
+}
+
+function validate_confirm_password() {
+  const user_password = document.getElementById("password").value;
+  const user_confirm_password = document.getElementById("confirm_password").value;
+  const confirm_password_input_field = document.getElementById("confirm_password");
+  const error_message = document.querySelector("#confirm-password-error");
+
+  confirm_password_input_field.classList.remove("success-border");
+
+  if (user_password !== user_confirm_password) {
+    error_message.classList.remove("hidden");
+    confirm_password_input_field.classList.add("error-border");
+    return;
+  }
+
+  error_message.classList.add("hidden");
+  confirm_password_input_field.classList.add("success-border");
+}
 
 async function sign_up(user_email, user_password) {
   console.log(user_email, user_password);

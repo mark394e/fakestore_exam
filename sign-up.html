@@ -20,10 +20,16 @@
       <form class="sign-up-form">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" />
+        <p class="error-message hidden" id="email-error">Please enter a valid email address.</p>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" />
+        <p class="error-message hidden" id="password-error">
+          Password must be between 8 to 20 characters long, contain at least one uppercase letter,
+          one lowercase letter, one number, and one special character.
+        </p>
         <label for="confirm_password">Confirm Password</label>
         <input type="password" name="confirm_password" id="confirm_password" />
+        <p class="error-message hidden" id="confirm-password-error">Passwords do not match.</p>
         <button type="submit" class="cta sign-up-btn">Sign up</button>
       </form>
     </main>
