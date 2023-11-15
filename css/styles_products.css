@@ -1,0 +1,301 @@
+@import "variables.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--primary_color);
+  color: var(--color_text_dark);
+}
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+/* ########## specific styling starts here ##########  */
+svg.svg-filter-icon {
+  width: 14px;
+  height: 12px;
+}
+img {
+  max-width: 100%;
+}
+/* loader element for letting the user know that the system is working behind the scenes
+- is only visible until the code reaches the catch and sends the errormessage (and only in case of an error) */
+svg#loader-element {
+  animation: spinningLoader 7s ease 0s infinite normal forwards;
+}
+@keyframes spinningLoader {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ############### PRODUCTVIEW PAGE (mobile first) ############### */
+/* test */
+nav#filter-buttons-navigation {
+  position: sticky;
+  top: 0;
+}
+/* buttons */
+div.top-level-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white; /* VARIABLE COLOR HERE */
+  border-bottom: 0.1em solid var(--tertiary_color);
+}
+div.top-level-button-wrapper button {
+  border: none;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0em 1em 0em;
+}
+div.all-products-button-wrapper,
+div.show-filter-buttons-wrapper {
+  width: 100%;
+}
+.active-button {
+  background-color: var(--tertiary_color);
+}
+/* ctageory buttons */
+div.filter-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+div.filter-buttons button {
+  width: 50%;
+  border-radius: 0%;
+  padding: 0.5rem;
+  border: 0.01rem solid var(--tertiary_color);
+}
+/* heading */
+h1 {
+  text-align: center;
+  margin: 0.5em 0em 0.5em 0em;
+  color: var(--secondary_color);
+}
+/* product card - mobile first */
+section#products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem;
+}
+/* product article */
+article.product {
+  flex: 1 0 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: white; /* PUT THIS IN A VARIABLE, NEEDS TO BE ALL WHITE TO MAKE UP FOR THE UGLY PICTURE BACKGROUND */
+}
+article.product div.product-info p.product-title,
+p.product-price {
+  margin: 0.2em;
+  padding: 0.2em;
+  color: var(--primary_color);
+}
+div.product-info {
+  background-color: #7f8181; /* REMEMBER TO PUT THIS IN A VARIABLE */
+}
+div.product-img-wrapper {
+  height: 15rem;
+  /*  margin: 0.5em; */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+div.add-product-button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+  background-color: #7f8181; /* VARIABLE HERE */
+}
+div.add-product-button button {
+  border: none;
+  color: var(--primary_color);
+  margin: 0;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  font-size: var(--h3_size);
+  background-color: var(--tertiary_color);
+}
+/* ############### SINGLEVIEW PAGE ############### */
+
+button.go-back-button {
+  border: none;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  width: 100%;
+  max-width: 8rem;
+  font-weight: 600;
+  text-align: left;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 1rem;
+}
+svg.back-arrow-icon {
+  width: 14px;
+  height: 14px;
+}
+section.single-product-wrapper {
+  margin-top: 1rem;
+  padding: 0rem 2rem 0rem 2rem;
+}
+div.img-product-wrapper {
+  text-align: center; /* originally for text, but since used to justify content of a block elm. on the inline axis  */
+}
+div.img-product-wrapper img.single-product-img {
+  max-width: 70%;
+  margin: 0.5rem;
+}
+/* info about product */
+h1.h1-product-title {
+  text-align: left;
+  font-weight: normal;
+  margin-bottom: 0.1rem;
+  /*   inline-size: 300px;
+  writing-mode: horizontal-tb; */
+}
+h2.h2-product-category {
+  font-size: 1rem; /* VARIABLE HERE */
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+p.price-desc {
+  font-size: var(--h5_size);
+}
+p.price {
+  font-size: var(--h3_size);
+  margin-bottom: 1rem;
+}
+p.product-desc {
+  line-height: 1.8rem;
+  margin-bottom: 1rem;
+}
+div.btn-wrapper-singleview {
+  margin-bottom: 2rem;
+}
+button.add-to-cart-btn-singleview {
+  border: none;
+  background-color: var(--tertiary_color);
+  text-align: center;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  width: 100%;
+  max-width: 21.875rem;
+  color: var(--primary_color);
+  font-weight: 600;
+}
+/* accordions / collapsables */
+div.accordion-wrapper {
+  margin-bottom: 1rem;
+}
+button.accordion-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: white; /* VARIABLE HERE */
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  width: 100%;
+  max-width: 21.875rem;
+  text-align: left;
+  margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
+}
+div.panel {
+  padding: 0 18px;
+  margin-bottom: 1rem;
+  background-color: var(--primary_color);
+  display: none;
+  overflow: hidden;
+}
+svg.open-accordion-icon {
+  width: 12px;
+  height: 8px;
+  fill: none;
+}
+/* the accordion that's active gets this class in JS */
+button.active-accordion {
+  border: 0.1rem solid;
+  border-color: var(--tertiary_color);
+}
+
+p.product-rating-desc {
+  margin-bottom: 0.5rem;
+  line-height: 1.8rem;
+}
+p.accoridon-product-content {
+  font-weight: 600;
+  line-height: 1.8rem;
+}
+span.express-span,
+span.standard-span {
+  font-weight: 600;
+}
+p.express-delivery-desc,
+p.standard-delivery-desc {
+  margin-bottom: 0.5rem;
+  line-height: 1.8rem;
+}
+
+/* ############### RESPONSIVE SETTINGS ############### */
+/* TABLET ADAPTIONS - PRODUCTVIEW PAGE */
+@media (min-width: 768px) {
+  section#products {
+    margin: 3rem;
+  }
+  article.product {
+    flex: 1 0 200px;
+  }
+}
+/* TABLET ADAPTIONS - SINGLEVIEW PAGE */
+@media (min-width: 768px) {
+  section.single-product-wrapper {
+    margin: 2rem 3rem 2rem 3rem;
+  }
+  article.single-product {
+    display: grid;
+    grid-template-columns: 1fr 1r;
+  }
+  div.img-product-wrapper {
+    grid-column: 1;
+  }
+  div.text-wrapper {
+    grid-column: 2;
+  }
+  div.btn-wrapper-singleview {
+    text-align: left;
+  }
+}
+/* DESKTOP ADAPTIONS - PRODUCTVIEW PAGE */
+@media (min-width: 1200px) {
+  section#products {
+    margin: 6rem;
+    gap: 2rem;
+  }
+  article.product {
+    flex: 1 0 250px;
+  }
+}
+/* DESKTOP ADAPTIONS - SINGLEVIEW PAGE */
+@media (min-width: 1200px) {
+  section.single-product-wrapper {
+    margin: 3rem 6rem 3rem 6rem;
+  }
+}
