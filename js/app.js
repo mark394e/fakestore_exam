@@ -27,9 +27,9 @@ document.querySelector(".sign-up-form").addEventListener("submit", function (eve
 
 function validate_email() {
   const email_RegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const user_email = document.getElementById("email").value;
+  const user_email = document.querySelector("#email").value;
   const isValidEmail = email_RegEx.test(user_email);
-  const email_input_field = document.getElementById("email");
+  const email_input_field = document.querySelector("#email");
   const error_message = document.querySelector("#email-error");
 
   email_input_field.classList.remove("success-border");

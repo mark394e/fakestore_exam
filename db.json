@@ -34,6 +34,11 @@
       "email": "markus@live.dk",
       "password": "Ayanami1997!",
       "id": 7
+    },
+    {
+      "email": "markus.lund@live.dk",
+      "password": "Hoffmann1234!",
+      "id": 6
     }
   ]
 }
