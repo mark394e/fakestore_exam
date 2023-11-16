@@ -16,14 +16,29 @@
       "id": 3
     },
     {
-      "email": "anna@lester.dk",
-      "password": "Lester1234!",
+      "email": "markus@live.dk",
+      "password": "Hoffmann1234!",
       "id": 4
     },
     {
       "email": "markuslund@live.dk",
-      "password": "123",
+      "password": "Ayanami1997!",
       "id": 5
+    },
+    {
+      "email": "markus@live.dk",
+      "password": "Ayanami1997!",
+      "id": 6
+    },
+    {
+      "email": "markus@live.dk",
+      "password": "Ayanami1997!",
+      "id": 7
+    },
+    {
+      "email": "markus.lund@live.dk",
+      "password": "Hoffmann1234!",
+      "id": 6
     }
   ]
 }
