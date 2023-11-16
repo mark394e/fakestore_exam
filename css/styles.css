@@ -114,8 +114,31 @@ input {
   font-size: 1rem;
 }
 
-.cta:hover {
+.cta.success {
   background-color: var(--success_color);
+}
+
+.cta-error-animation {
+  animation: error-animation 0.175s ease-in-out;
+  background-color: var(--danger_color);
+}
+
+@keyframes error-animation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .green-title {
