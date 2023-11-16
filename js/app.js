@@ -1,5 +1,8 @@
 "use strict";
 
+const spinner = document.querySelector(".spinner");
+const sign_up_btn = document.querySelector(".sign-up-btn");
+
 document.querySelector("#email").addEventListener("blur", function () {
   validate_email();
 });
@@ -92,8 +95,6 @@ function validate_confirm_password() {
 // ##################################################
 
 function validate_sign_up(user_email, user_password, user_confirmed_password) {
-  const sign_up_btn = document.querySelector(".sign-up-btn");
-
   if (!user_email || !user_password || !user_confirmed_password) {
     sign_up_btn.classList.add("cta-error-animation");
     setTimeout(function () {
@@ -122,12 +123,15 @@ async function sign_up(user_email, user_password) {
   };
 
   try {
+    sign_up_btn.classList.add("hidden");
+    spinner.classList.remove("hidden");
     const response = await fetch("http://localhost:3000/users", options);
     const data = await response.json();
     console.log(data);
+    spinner.classList.add("hidden");
+    sign_up_btn.classList.remove("hidden");
+    window.location.href = "index.html";
   } catch (error) {
     console.log(error);
   }
-
-  window.location.href = "index.html";
 }

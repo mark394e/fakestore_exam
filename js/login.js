@@ -68,6 +68,7 @@ function validate_login(users) {
 
   error_message.classList.add("hidden");
   spinner.classList.add("hidden");
+  login_btn.classList.add("success");
 
   start_session(user_email);
 }
