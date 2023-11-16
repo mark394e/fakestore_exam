@@ -141,6 +141,25 @@ input {
   }
 }
 
+.spinner {
+  border: 5px solid var(--primary_color); /* Light grey */
+  border-top: 5px solid var(--secondary_color); /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: loading 0.5s linear infinite;
+  place-self: center;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .green-title {
   color: var(--tertiary_color);
   font-size: var(--h1_size);
