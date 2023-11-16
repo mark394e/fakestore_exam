@@ -18,6 +18,48 @@ body {
 }
 
 /* ########## specific styling starts here ##########  */
+/* menu navigation */
+/* header.header-navigation {
+} */
+nav.menu-nav {
+  margin-bottom: 0.5rem;
+  padding: 0.8rem;
+  background-color: var(--primary_color);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+}
+ul.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ul.navlinks li {
+  list-style-type: none;
+}
+div.icon-navlinks-wrapper {
+  display: flex;
+  align-items: center;
+}
+/* a.go-to-cart-link {
+  justify-self: end;
+}
+a.logout-link {
+  place-self: end;
+} */
+svg.logo-svg {
+  max-width: 40px;
+  max-height: 40px;
+  width: 100%;
+}
+svg.cart-svg {
+  width: 44px;
+  height: 40px;
+}
+svg.logout-svg {
+  width: 30px;
+  height: 30px;
+}
+
 svg.svg-filter-icon {
   width: 14px;
   height: 12px;
@@ -66,6 +108,8 @@ div.show-filter-buttons-wrapper {
 }
 .active-button {
   background-color: var(--tertiary_color);
+  color: var(--primary_color);
+  fill: var(--primary_color);
 }
 /* ctageory buttons */
 div.filter-buttons {
@@ -100,7 +144,7 @@ article.product {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: white; /* PUT THIS IN A VARIABLE, NEEDS TO BE ALL WHITE TO MAKE UP FOR THE UGLY PICTURE BACKGROUND */
+  background-color: red; /* PUT THIS IN A VARIABLE, NEEDS TO BE ALL WHITE TO MAKE UP FOR THE UGLY PICTURE BACKGROUND */
 }
 article.product div.product-info p.product-title,
 p.product-price {
@@ -110,10 +154,16 @@ p.product-price {
 }
 div.product-info {
   background-color: #7f8181; /* REMEMBER TO PUT THIS IN A VARIABLE */
+  height: 5rem;
+}
+div.product-img-container {
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 1rem;
 }
 div.product-img-wrapper {
-  height: 15rem;
-  /*  margin: 0.5em; */
+  height: 10rem;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -184,9 +234,19 @@ p.price {
   font-size: var(--h3_size);
   margin-bottom: 1rem;
 }
+/* product description */
 p.product-desc {
   line-height: 1.8rem;
   margin-bottom: 1rem;
+}
+/* read more a-tag in product description */
+a.read-more {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--color_text_dark);
+}
+a.read-more:hover {
+  color: var(--tertiary_color);
 }
 div.btn-wrapper-singleview {
   margin-bottom: 2rem;
@@ -200,6 +260,7 @@ button.add-to-cart-btn-singleview {
   max-width: 21.875rem;
   color: var(--primary_color);
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 /* accordions / collapsables */
 div.accordion-wrapper {

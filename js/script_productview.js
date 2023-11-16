@@ -129,19 +129,27 @@ function showProducts(products) {
   heading.textContent = "All products";
 
   products.forEach((product) => {
+    //making the first letter capitalized, others to lowercase
+    let modifiedProductTitle =
+      product.title.charAt(0).toUpperCase() +
+      product.title.slice(1).toLowerCase();
     //cloning
     const cloneProductData = productTemplate.cloneNode(true).content;
     //placing the products content in our template fields
     //img
-    /*  cloneProductData.querySelector("img.product-img").src = product.image; */
     cloneProductData.querySelector(
       "div.product-img-wrapper"
     ).style.backgroundImage = `url('${product.image}')`;
-    //product title (if longer than 15 chars we cut it)
+    //product title (if longer than 10 chars we cut it)
     cloneProductData.querySelector("p.product-title").textContent =
-      product.title.length > 13
-        ? product.title.slice(0, 13) + ".."
-        : product.title;
+      modifiedProductTitle.length > 10
+        ? modifiedProductTitle.slice(0, 10) + ".."
+        : modifiedProductTitle;
+    /* test */
+    //accessibility on product title for screenreader, due to us cutting the length
+    cloneProductData
+      .querySelector("p.product-title")
+      .setAttribute("aria-label", modifiedProductTitle);
     //product price
     cloneProductData.querySelector("p.product-price").textContent =
       product.price + ",-";
