@@ -2,6 +2,8 @@
 
 :root {
   /* Fonts */
+  /* (Root size, so the rem relates to that) */
+  font-size: 16px;
   --display_font: "Lora", serif;
   --body_font: "Poppins", sans-serif;
   --h1_title_size: 2.827rem;
@@ -27,6 +29,16 @@
 
   /* Transition */
   --transition: 0.175s ease-in-out;
+
+  /* Line-height */
+  --line-height: 1.8rem;
+
+  /* Font-weights */
+  --font-weight_light: 300;
+  --font-weight_reg: 400;
+  --font-weight_medium: 500;
+  --font-weight_semi_bold: 600;
+  --font-weight_bold: 700;
 }
 
 @media (min-width: 480px) {

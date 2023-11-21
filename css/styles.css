@@ -74,8 +74,13 @@ input {
   border: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
+  visibility: hidden;
 }
 
 .error-message {
