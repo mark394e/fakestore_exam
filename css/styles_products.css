@@ -11,16 +11,21 @@
 body {
   background-color: var(--primary_color);
   color: var(--color_text_dark);
+  font-family: var(--body_font);
+}
+button {
+  font-family: var(--body_font);
+}
+img {
+  max-width: 100%;
 }
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* ########## specific styling starts here ##########  */
-/* menu navigation */
-/* header.header-navigation {
-} */
+/* ########## SPECIFIC STYLING STARTS HERE ##########  */
+/* ### Menu navigation ### */
 nav.menu-nav {
   margin-bottom: 0.5rem;
   padding: 0.8rem;
@@ -40,36 +45,93 @@ div.icon-navlinks-wrapper {
   display: flex;
   align-items: center;
 }
-/* a.go-to-cart-link {
-  justify-self: end;
-}
-a.logout-link {
-  place-self: end;
-} */
 svg.logo-svg {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   width: 100%;
 }
 svg.cart-svg {
-  width: 44px;
-  height: 40px;
+  width: 2.75rem;
+  height: 2.5rem;
 }
 svg.logout-svg {
-  width: 30px;
-  height: 30px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
-
+/* #### Footer #### */
+footer.footer {
+  background-color: #220600; /* VARIABLE HERE */
+  padding: 2rem;
+}
+footer.footer a {
+  text-decoration: none;
+  color: var(--primary_color);
+  font-weight: 400;
+  cursor: pointer;
+}
+footer button {
+  background-color: transparent;
+  color: var(--primary_color);
+  border: none;
+  text-align: left;
+  font-size: 1rem; /* variable here!!!!!!!!!!!! */
+  font-family: none;
+}
+h3.categories-footer-heading,
+h3.information-footer-heading {
+  color: var(--primary_color);
+  font-weight: 600;
+}
+svg.instagram-svg,
+svg.facebook-svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+svg.footer-logo-svg {
+  width: 4.375rem;
+  height: 4.375rem;
+  margin-bottom: 2rem;
+}
+section.categories-footer,
+section.footer-information {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+section.some-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+section.payment-methods {
+  margin-bottom: 2rem;
+}
+section.payment-methods img {
+  width: 60%;
+}
+figcaption.payment-img-figcaption {
+  font-size: var(--h6_size);
+}
+section.copyright {
+  text-align: center;
+}
 svg.svg-filter-icon {
-  width: 14px;
-  height: 12px;
+  width: 0.875rem;
+  height: 0.75rem;
 }
-img {
-  max-width: 100%;
-}
-/* loader element for letting the user know that the system is working behind the scenes
+/* ### Loader element ###
+for letting the user know that the system is working behind the scenes
 - is only visible until the code reaches the catch and sends the errormessage (and only in case of an error) */
+div.loader-wrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
 svg#loader-element {
+  width: 4.375rem;
+  height: 4.375rem;
+  fill: var(--color_text_dark);
   animation: spinningLoader 7s ease 0s infinite normal forwards;
 }
 @keyframes spinningLoader {
@@ -82,36 +144,40 @@ svg#loader-element {
   }
 }
 
-/* ############### PRODUCTVIEW PAGE (mobile first) ############### */
-/* test */
+/* ############### PRODUCTVIEW PAGE ############### (mobile first, responsive adaptions in the bottom) ############### */
+/* #### Filterbutton nav #### */
 nav#filter-buttons-navigation {
   position: sticky;
   top: 0;
 }
-/* buttons */
 div.top-level-button-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   background-color: white; /* VARIABLE COLOR HERE */
-  border-bottom: 0.1em solid var(--tertiary_color);
+  border-bottom: 0.1rem solid var(--tertiary_color);
 }
 div.top-level-button-wrapper button {
   border: none;
   text-align: center;
   width: 100%;
-  padding: 1em 0em 1em 0em;
+  padding: 0.9rem 0rem 0.9rem 0rem;
 }
 div.all-products-button-wrapper,
 div.show-filter-buttons-wrapper {
   width: 100%;
 }
+div.all-products-button-wrapper:hover,
+div.show-filter-buttons-wrapper:hover {
+  background-color: var(--primary_color);
+}
+/* The active class, that toggles on the filter buttons */
 .active-button {
   background-color: var(--tertiary_color);
   color: var(--primary_color);
   fill: var(--primary_color);
 }
-/* ctageory buttons */
+/* Category buttons to filter by */
 div.filter-buttons {
   width: 100%;
   display: flex;
@@ -124,19 +190,23 @@ div.filter-buttons button {
   padding: 0.5rem;
   border: 0.01rem solid var(--tertiary_color);
 }
-/* heading */
-h1 {
+div.filter-buttons button:hover {
+  background-color: var(--primary_color);
+}
+/* #### Heading on productview #### 'All products' / category name */
+h1.heading {
+  font-family: var(--display_font);
   text-align: center;
-  margin: 0.5em 0em 0.5em 0em;
+  margin: 0.4rem;
   color: var(--secondary_color);
 }
-/* product card - mobile first */
+/* #### Product section ####  */
 section#products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-  margin: 2rem;
+  margin: 2rem 2rem 10rem 2rem;
 }
 /* product article */
 article.product {
@@ -144,22 +214,28 @@ article.product {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: red; /* PUT THIS IN A VARIABLE, NEEDS TO BE ALL WHITE TO MAKE UP FOR THE UGLY PICTURE BACKGROUND */
+  cursor: pointer;
 }
-article.product div.product-info p.product-title,
+article.product div.product-info h2.product-title,
 p.product-price {
-  margin: 0.2em;
-  padding: 0.2em;
-  color: var(--primary_color);
+  margin: 0.1rem;
+  padding: 0.1rem;
+}
+h2.product-title {
+  font-size: 1rem; /* variable here !!!!!!!!!!!!!! */
+  font-weight: 400;
+  line-height: 1.8rem; /* variable here!!!!!!!!!!!! */
 }
 div.product-info {
   background-color: #7f8181; /* REMEMBER TO PUT THIS IN A VARIABLE */
   height: 5rem;
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  color: white; /* VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
 }
 div.product-img-container {
   width: 100%;
   height: auto;
-  background-color: white;
+  background-color: white; /* VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
   padding: 1rem;
 }
 div.product-img-wrapper {
@@ -174,18 +250,18 @@ div.add-product-button {
   justify-content: end;
   margin: 0;
   padding: 0;
-  background-color: #7f8181; /* VARIABLE HERE */
+  background-color: #7f8181; /* VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!! */
 }
 div.add-product-button button {
   border: none;
   color: var(--primary_color);
   margin: 0;
-  padding: 0.2em 0.5em 0.2em 0.5em;
+  padding: 0.1rem 0.4rem 0.1rem 0.4rem;
   font-size: var(--h3_size);
   background-color: var(--tertiary_color);
+  cursor: pointer;
 }
 /* ############### SINGLEVIEW PAGE ############### */
-
 button.go-back-button {
   border: none;
   padding: 0.8rem 1rem 0.8rem 1rem;
@@ -198,13 +274,17 @@ button.go-back-button {
   align-items: center;
   gap: 0.3rem;
   margin: 1rem;
+  color: var(--color_text_dark);
+}
+button.go-back-button:hover {
+  color: var(--tertiary_color);
 }
 svg.back-arrow-icon {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
 }
 section.single-product-wrapper {
-  margin-top: 1rem;
+  margin: 1rem 0rem 10rem 0rem;
   padding: 0rem 2rem 0rem 2rem;
 }
 div.img-product-wrapper {
@@ -214,18 +294,17 @@ div.img-product-wrapper img.single-product-img {
   max-width: 70%;
   margin: 0.5rem;
 }
-/* info about product */
+/* #### Info about product #### */
 h1.h1-product-title {
   text-align: left;
-  font-weight: normal;
+  font-weight: 400;
   margin-bottom: 0.1rem;
-  /*   inline-size: 300px;
-  writing-mode: horizontal-tb; */
+  color: var(--secondary_color);
 }
 h2.h2-product-category {
   font-size: 1rem; /* VARIABLE HERE */
   margin-bottom: 2rem;
-  font-weight: normal;
+  font-weight: 400;
 }
 p.price-desc {
   font-size: var(--h5_size);
@@ -234,12 +313,12 @@ p.price {
   font-size: var(--h3_size);
   margin-bottom: 1rem;
 }
-/* product description */
+/* Product description */
 p.product-desc {
   line-height: 1.8rem;
   margin-bottom: 1rem;
 }
-/* read more a-tag in product description */
+/* Read more a-tag in product description */
 a.read-more {
   text-decoration: none;
   font-weight: 600;
@@ -259,10 +338,14 @@ button.add-to-cart-btn-singleview {
   width: 100%;
   max-width: 21.875rem;
   color: var(--primary_color);
-  font-weight: 600;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  margin: 1.5rem 0rem 1rem 0rem;
+  text-transform: uppercase;
 }
-/* accordions / collapsables */
+button.add-to-cart-btn-singleview:hover {
+  box-shadow: var(--box-shadow);
+}
+/* #### Accordions / collapsables #### */
 div.accordion-wrapper {
   margin-bottom: 1rem;
 }
@@ -271,7 +354,7 @@ button.accordion-btn {
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: white; /* VARIABLE HERE */
+  background-color: white; /* VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!!! */
   padding: 0.8rem 1rem 0.8rem 1rem;
   width: 100%;
   max-width: 21.875rem;
@@ -280,23 +363,22 @@ button.accordion-btn {
   box-shadow: var(--box-shadow);
 }
 div.panel {
-  padding: 0 18px;
+  padding: 0 1.125rem;
   margin-bottom: 1rem;
   background-color: var(--primary_color);
   display: none;
   overflow: hidden;
 }
 svg.open-accordion-icon {
-  width: 12px;
-  height: 8px;
+  width: 0.75rem;
+  height: 0.5rem;
   fill: none;
 }
-/* the accordion that's active gets this class in JS */
+/* The accordion that's active gets this class in JS */
 button.active-accordion {
   border: 0.1rem solid;
   border-color: var(--tertiary_color);
 }
-
 p.product-rating-desc {
   margin-bottom: 0.5rem;
   line-height: 1.8rem;
@@ -316,10 +398,40 @@ p.standard-delivery-desc {
 }
 
 /* ############### RESPONSIVE SETTINGS ############### */
+/* TABLET ADAPTIONS - FOOTER */
+@media (min-width: 768px) {
+  footer.footer {
+    padding: 4rem;
+  }
+  section.payment-methods img {
+    width: 40%;
+  }
+  footer.footer div.top-of-footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+  section.payment-methods {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  section.footer-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+  }
+}
 /* TABLET ADAPTIONS - PRODUCTVIEW PAGE */
 @media (min-width: 768px) {
   section#products {
-    margin: 3rem;
+    margin: 2rem 4rem 10rem 4rem;
   }
   article.product {
     flex: 1 0 200px;
@@ -328,11 +440,11 @@ p.standard-delivery-desc {
 /* TABLET ADAPTIONS - SINGLEVIEW PAGE */
 @media (min-width: 768px) {
   section.single-product-wrapper {
-    margin: 2rem 3rem 2rem 3rem;
+    margin: 2rem 3rem 15rem 3rem;
   }
   article.single-product {
     display: grid;
-    grid-template-columns: 1fr 1r;
+    grid-template-columns: 1fr 1fr;
   }
   div.img-product-wrapper {
     grid-column: 1;
@@ -347,8 +459,8 @@ p.standard-delivery-desc {
 /* DESKTOP ADAPTIONS - PRODUCTVIEW PAGE */
 @media (min-width: 1200px) {
   section#products {
-    margin: 6rem;
-    gap: 2rem;
+    margin: 2rem 6rem 10rem 6rem;
+    /*    gap: 2rem; */
   }
   article.product {
     flex: 1 0 250px;
@@ -357,6 +469,10 @@ p.standard-delivery-desc {
 /* DESKTOP ADAPTIONS - SINGLEVIEW PAGE */
 @media (min-width: 1200px) {
   section.single-product-wrapper {
-    margin: 3rem 6rem 3rem 6rem;
+    margin: 3rem 6rem 15rem 6rem;
+  }
+  /* footer */
+  footer.footer {
+    padding: 6rem;
   }
 }

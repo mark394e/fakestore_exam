@@ -1,6 +1,6 @@
 "use strict";
 
-isUserLoggedIn();
+/* isUserLoggedIn(); */
 
 function isUserLoggedIn() {
   const logged_in_user = sessionStorage.getItem("email");
@@ -23,12 +23,55 @@ const toggleButton = document.getElementById("toggle-filter-buttons");
 /* this is the div that holds the filter btns */
 const filterButtons = document.getElementById("filter-buttons-div");
 /* this is the actual filter btns, naming mistake.... */
-const theActualFilterButtons = document.querySelectorAll(".filter-buttons button");
+const theActualFilterButtons = document.querySelectorAll(
+  ".filter-buttons button"
+);
+const footerCategoryLinks = document.querySelectorAll("button.category-link");
 //we want to show all products as default
 fetchAllProducts();
 //we have a button to toggle the 4 filter buttons
 //they are hidden as default
 toggleFilterButtons();
+
+//TEST
+const urlParamsCategory = new URLSearchParams(window.location.search);
+const clickedCategoryFromSingleviewFooter = urlParamsCategory.get("category");
+async function footerCategoryClickedFromSingleview() {
+  window.scrollTo(0, 0);
+  try {
+    const getCategoryProducts = await fetch(
+      `https://fakestoreapi.com/products/category/${clickedCategoryFromSingleviewFooter}`
+    );
+
+    if (!getCategoryProducts.ok) {
+      throw new Error(
+        `Error related to getCateoryProducts: ${getCategoryProducts.status}`
+      );
+    }
+
+    const categoryProducts = await getCategoryProducts.json();
+
+    showCategoryProducts(categoryProducts);
+  } catch (error) {
+    console.error("Error:", error);
+    informUserOfError(
+      "Sorry! It seems like there is a problem with getting the products. Please try again"
+    );
+  } finally {
+    loader.style.display = "none";
+  }
+}
+//only call the function if the paramter is 'active' / relevant,
+//otherwise it conflicts with the show products logic
+if (clickedCategoryFromSingleviewFooter) {
+  footerCategoryClickedFromSingleview();
+}
+function footerCategoryLinksClickEvent() {
+  footerCategoryLinks.forEach((categoryLink) =>
+    categoryLink.addEventListener("click", filterProductsByCategory)
+  );
+}
+footerCategoryLinksClickEvent();
 
 function toggleFilterButtons() {
   toggleButton.addEventListener("click", () => {
@@ -37,29 +80,35 @@ function toggleFilterButtons() {
     if (filterButtons.classList.contains("hidden")) {
       toggleButton.classList.remove("active-button");
     }
-    document.querySelector("button.all-products-button").classList.remove("active-button");
+    document
+      .querySelector("button.all-products-button")
+      .classList.remove("active-button");
 
     if (filterButtons.classList.contains("hidden")) {
-      document.querySelector("button.all-products-button").classList.add("active-button");
+      document
+        .querySelector("button.all-products-button")
+        .classList.add("active-button");
     }
   });
   //we want to establish click events for our 'filter' buttons
   filterButtonClickEvents();
 }
-
 //when one of the category buttons is clicked, the filterProductsByCategory function gets called
 //when the 'all products' button is clicked, the default fetchAllProducts function gets called
 function filterButtonClickEvents() {
   theActualFilterButtons.forEach((filterButton) =>
     filterButton.addEventListener("click", filterProductsByCategory)
   );
-  document.querySelector("button.all-products-button").addEventListener("click", fetchAllProducts);
+  document
+    .querySelector("button.all-products-button")
+    .addEventListener("click", fetchAllProducts);
 }
 
 //in this function we fetch the products that match the querystring
 //and the 'this.dataset.category' refelcts one of the category filter buttons
 //if the user clicks on 'electronics', 'this' is electronics
 async function filterProductsByCategory() {
+  window.scrollTo(0, 0);
   filterButtons.classList.add("hidden");
   try {
     const getCategoryProducts = await fetch(
@@ -67,7 +116,9 @@ async function filterProductsByCategory() {
     );
 
     if (!getCategoryProducts.ok) {
-      throw new Error(`Error related to getCateoryProducts: ${getCategoryProducts.status}`);
+      throw new Error(
+        `Error related to getCateoryProducts: ${getCategoryProducts.status}`
+      );
     }
 
     const categoryProducts = await getCategoryProducts.json();
@@ -87,14 +138,18 @@ async function filterProductsByCategory() {
 async function fetchAllProducts() {
   /* active button logic under here, and till the hastag seperation */
   toggleButton.classList.remove("active-button");
-  document.querySelector("button.all-products-button").classList.add("active-button");
+  document
+    .querySelector("button.all-products-button")
+    .classList.add("active-button");
   filterButtons.classList.add("hidden");
   /* ####################################### */
   try {
     const getAllProducts = await fetch("https://fakestoreapi.com/products");
 
     if (!getAllProducts.ok) {
-      throw new Error(`Error related to getAllProducts: ${getAllProducts.status}`);
+      throw new Error(
+        `Error related to getAllProducts: ${getAllProducts.status}`
+      );
     }
 
     const products = await getAllProducts.json();
@@ -113,9 +168,7 @@ async function fetchAllProducts() {
 //THIS IS OUR DEFAULT SHOW PRODUCTS FUNCTION, SHOWS ALL PRODUCTS
 function showProducts(products) {
   /*   console.log(products); */
-
   //show data in HTMl by using the template and clone the data
-
   //this is the section we created in our HTML to append the data
   const productContainer = document.querySelector("section#products");
   //this is the HTML-template (structured the way we want to display the data)
@@ -128,7 +181,8 @@ function showProducts(products) {
   products.forEach((product) => {
     //making the first letter capitalized, others to lowercase
     let modifiedProductTitle =
-      product.title.charAt(0).toUpperCase() + product.title.slice(1).toLowerCase();
+      product.title.charAt(0).toUpperCase() +
+      product.title.slice(1).toLowerCase();
     //cloning
     const cloneProductData = productTemplate.cloneNode(true).content;
     //placing the products content in our template fields
@@ -137,17 +191,18 @@ function showProducts(products) {
       "div.product-img-wrapper"
     ).style.backgroundImage = `url('${product.image}')`;
     //product title (if longer than 10 chars we cut it)
-    cloneProductData.querySelector("p.product-title").textContent =
+    cloneProductData.querySelector("h2.product-title").textContent =
       modifiedProductTitle.length > 10
         ? modifiedProductTitle.slice(0, 10) + ".."
         : modifiedProductTitle;
     /* test */
     //accessibility on product title for screenreader, due to us cutting the length
     cloneProductData
-      .querySelector("p.product-title")
+      .querySelector("h2.product-title")
       .setAttribute("aria-label", modifiedProductTitle);
     //product price
-    cloneProductData.querySelector("p.product-price").textContent = product.price + ",-";
+    cloneProductData.querySelector("p.product-price").textContent =
+      product.price + ",-";
     //click event on the article (so we later can go to singleview)
     cloneProductData
       .querySelector("article.product")
@@ -169,10 +224,15 @@ function showCategoryProducts(categoryProducts) {
   productContainer.textContent = "";
 
   categoryProducts.forEach((product) => {
+    //modifying the title
+    let modifiedProductTitle =
+      product.title.charAt(0).toUpperCase() +
+      product.title.slice(1).toLowerCase();
     //Setting the headings content to the chosen categorys name + capitalizing the first letter
     //we use charAt(0) to get the first letter, then we capitalize it, and then we
     //take the rest of the sentence by taking it from position 1 and further
-    heading.textContent = product.category.charAt(0).toUpperCase() + product.category.substring(1);
+    heading.textContent =
+      product.category.charAt(0).toUpperCase() + product.category.substring(1);
     //cloning
     const cloneProductData = productTemplate.cloneNode(true).content;
     //placing the products content in our template fields
@@ -181,12 +241,19 @@ function showCategoryProducts(categoryProducts) {
     cloneProductData.querySelector(
       "div.product-img-wrapper"
     ).style.backgroundImage = `url('${product.image}')`;
-    //product title
-    //product title (if longer than 15 chars we cut it)
-    cloneProductData.querySelector("p.product-title").textContent =
-      product.title.length > 13 ? product.title.slice(0, 13) + ".." : product.title;
+    //product title (if longer than 10 chars we cut it)
+    cloneProductData.querySelector("h2.product-title").textContent =
+      modifiedProductTitle.length > 10
+        ? modifiedProductTitle.slice(0, 10) + ".."
+        : modifiedProductTitle;
+    /* test */
+    //accessibility on product title for screenreader, due to us cutting the length
+    cloneProductData
+      .querySelector("h2.product-title")
+      .setAttribute("aria-label", modifiedProductTitle);
     //product price
-    cloneProductData.querySelector("p.product-price").textContent = product.price + ",-";
+    cloneProductData.querySelector("p.product-price").textContent =
+      product.price + ",-";
 
     cloneProductData
       .querySelector("article.product")
@@ -202,7 +269,6 @@ function showSingleProduct(product) {
 
 //show user error message (from the catch code)
 function informUserOfError(message) {
-  const errorMessageElement = document.createElement("p");
-  errorMessageElement.textContent = message;
-  document.body.appendChild(errorMessageElement);
+  document.querySelector("h1.heading").textContent = "";
+  document.querySelector("h1.heading").textContent = message;
 }
