@@ -1,4 +1,5 @@
 @import "variables.css";
+@import "checkout.css";
 
 /* Global styles */
 * {
@@ -11,7 +12,7 @@ img {
   max-width: 100%;
 }
 
-header {
+header.frontpage-header {
   display: grid;
 }
 
@@ -167,7 +168,7 @@ input {
 }
 
 /* Header */
-header::after {
+header.frontpage-header::after {
   content: "";
   display: block;
   height: 200px;
@@ -205,30 +206,34 @@ header::after {
 
 /* Sign up form */
 .sign-up-form,
-.log-in-form {
+.log-in-form,
+.checkout-form {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
 }
 
 .sign-up-form label,
-.log-in-form label {
+.log-in-form label,
+.checkout-form label {
   margin-bottom: 0.25rem;
 }
 
 .sign-up-form input,
-.log-in-form input {
+.log-in-form input,
+.checkout-form input {
   margin-bottom: 1.25rem;
   padding: 0.5rem;
   box-shadow: var(--box-shadow);
 }
 
 .sign-up-form .cta,
-.log-in-form .cta {
+.log-in-form .cta,
+.checkout-form .cta {
   margin-top: 2rem;
 }
 
 /* Footer */
-footer {
+.form-footer {
   text-align: center;
 }
