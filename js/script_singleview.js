@@ -1,14 +1,36 @@
 "use strict";
 
-//we grab the url parameter we 'send' in the productview script, we save it in a variable, and then we use it to crete a singlepage for each product with the right data based on the ID
+//we grab the url parameter we 'send' in the productview script, we save it, and then we use it to crete a singlepage for each product with the right data based on the ID
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 
 //variable for use in hideShowAccordionContent()
 const accordionButtons = document.querySelectorAll("button.accordion-btn");
 
+//for the category buttons in the footer
+const footerCategoryLinks = document.querySelectorAll("button.category-link");
+
 fetchSingleProduct();
 hideShowAccordionContent();
+
+footerCategoryLinksClickEvent();
+
+/*  function redirectToProductView(categoryLink) {
+  localStorage.setItem("selectedCategory", categoryLink.dataset.category);
+  location.href = "./productview.html"; */
+/*   location.href = `productview.html?category=${categoryLink.dataset.category}`; */
+/*   location.href = "productview.html"; 
+}*/
+//redirect from footer category buttons
+function footerCategoryLinksClickEvent() {
+  footerCategoryLinks.forEach((categoryLink) =>
+    categoryLink.addEventListener(
+      "click",
+      () =>
+        (location.href = `productview.html?category=${categoryLink.dataset.category}`)
+    )
+  );
+}
 
 //get the clicked product via. the ID
 async function fetchSingleProduct() {
@@ -106,9 +128,8 @@ function goBackToProducts() {
 }
 //show user error message (from the catch code)
 function informUserOfError(message) {
-  const errorMessageElement = document.createElement("p");
-  errorMessageElement.textContent = message;
-  document.body.appendChild(errorMessageElement);
+  document.querySelector("h1.h1-product-title").textContent = "";
+  document.querySelector("h1.h1-product-title").textContent = message;
 }
 
 //acordion / collapsables (with product details + delivery details)
