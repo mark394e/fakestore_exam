@@ -202,6 +202,7 @@ header.frontpage-header::after {
   line-height: 50px;
   position: absolute;
   z-index: 2;
+  top: 0;
 }
 
 /* Sign up form */
