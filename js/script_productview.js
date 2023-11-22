@@ -1,4 +1,6 @@
-"use strict";
+import { user_logout } from "./logout.mjs";
+
+user_logout();
 
 /* isUserLoggedIn(); */
 
