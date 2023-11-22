@@ -27,6 +27,7 @@ const theActualFilterButtons = document.querySelectorAll(
   ".filter-buttons button"
 );
 const footerCategoryLinks = document.querySelectorAll("button.category-link");
+
 //we want to show all products as default
 fetchAllProducts();
 //we have a button to toggle the 4 filter buttons

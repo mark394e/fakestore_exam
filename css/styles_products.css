@@ -396,6 +396,27 @@ p.standard-delivery-desc {
   margin-bottom: 0.5rem;
   line-height: 1.8rem;
 }
+/* ############### CART PAGE ############### */
+/* #### Quantity buttons #### */
+div.input-group.plus-minus-input {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+div.plus-minus-input {
+  align-items: center;
+}
+div.plus-minus-input input.input-group-field {
+  text-align: center;
+  padding: 0.5rem;
+  max-width: 3rem;
+  width: 100%;
+  -moz-appearance: textfield; /* removes the input value button */
+}
+button.quantity {
+  border-radius: 0%;
+  padding: 1rem;
+}
 
 /* ############### RESPONSIVE SETTINGS ############### */
 /* TABLET ADAPTIONS - FOOTER */
