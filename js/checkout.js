@@ -8,63 +8,94 @@ const cvv_input_field = document.querySelector("#cvv");
 const cvv_error_message = document.querySelector("#cvv-error");
 const zipcode_input_field = document.querySelector("#zipcode");
 const zipcode_error_message = document.querySelector("#zipcode-error");
-const card_number_input_field = document.querySelector("#card-number");
-const card_number_error_message = document.querySelector("#card-number-error");
+const card_number_input_field = document.querySelector("#cardnumber");
+const card_number_error_message = document.querySelector("#cardnumber-error");
+const pay_btn = document.querySelector("#pay-btn");
+const only_numbers_RegEx = /^[0-9]+$/; // allow only numbers
+const expiry_date_RegEx = /^(0[1-9]|1[0-2])\/\d{2}$/; // allow only 1-12 for month, a forward slash and 2 digits for year
 
-cvv_input_field.addEventListener("change", function (e) {
-  let input = e.target.value;
-  if (input.length === 0) {
-    cvv_input_field.classList.remove("success-border");
-  }
-  validate_cvv_input(input);
+zipcode_input_field.addEventListener("change", function (e) {
+  let input_zipcode = e.target.value;
+  zipcode_input_field.classList.remove("success-border");
+  validate_zipcode_input(input_zipcode);
 });
 
-expiry_input_field.addEventListener("input", function (e) {
-  let input = e.target.value;
-  insert_slash(input);
-});
+function validate_zipcode_input(input_zipcode) {
+  let isValidZipcode = only_numbers_RegEx.test(input_zipcode);
 
-expiry_input_field.addEventListener("change", function (e) {
-  let input = e.target.value;
-  if (input.length === 0) {
-    expiry_input_field.classList.remove("success-border");
+  if (!isValidZipcode || input_zipcode.length < 3) {
+    zipcode_error_message.classList.remove("hidden");
+    zipcode_input_field.classList.add("error-border");
+    return;
   }
-  validate_expiry(input);
-});
 
-function insert_slash(input) {
-  if (input.length >= 2) {
-    input = input.slice(0, 2) + "/" + input.slice(2);
-  }
-  expiry_input_field.value = input;
+  zipcode_input_field.classList.add("success-border");
+  zipcode_error_message.classList.add("hidden");
+  zipcode_input_field.classList.remove("error-border");
+  zipcode_input_field.value = input_zipcode;
+  return;
 }
 
-function validate_cvv_input(input) {
-  const cvv_RegEx = /^[0-9]+$/;
-  let isValidCvv = cvv_RegEx.test(input);
+// #####################################################
 
-  if (!isValidCvv && input.length != 0) {
+card_number_input_field.addEventListener("change", function (e) {
+  let input_card_number = e.target.value;
+  card_number_input_field.classList.remove("success-border");
+  validate_card_number(input_card_number);
+});
+
+function validate_card_number(input_card_number) {
+  let isValidCardNumber = only_numbers_RegEx.test(input_card_number);
+
+  if (!isValidCardNumber || input_card_number.length < 16) {
+    card_number_error_message.classList.remove("hidden");
+    card_number_input_field.classList.add("error-border");
+    return;
+  }
+
+  card_number_input_field.classList.remove("error-border");
+  card_number_error_message.classList.add("hidden");
+  card_number_input_field.classList.add("success-border");
+  card_number_input_field.value = input_card_number;
+  return;
+}
+
+// #####################################################
+
+cvv_input_field.addEventListener("change", function (e) {
+  let input_cvv = e.target.value;
+  cvv_input_field.classList.remove("success-border");
+  validate_cvv_input(input_cvv);
+});
+
+function validate_cvv_input(input_cvv) {
+  let isValidCvv = only_numbers_RegEx.test(input_cvv);
+
+  if (!isValidCvv || input_cvv.length < 3) {
     cvv_error_message.classList.remove("hidden");
     cvv_input_field.classList.add("error-border");
     return;
   }
-  if (input.length != 0) {
-    cvv_input_field.classList.add("success-border");
 
-    return;
-  }
-
+  cvv_input_field.classList.add("success-border");
   cvv_error_message.classList.add("hidden");
   cvv_input_field.classList.remove("error-border");
-  cvv_input_field.value = input;
+  cvv_input_field.value = input_cvv;
   return;
 }
 
-function validate_expiry(input) {
-  const expiry_date_RegEx = /^[0-9\/]+$/;
-  let isValidExpiryDate = expiry_date_RegEx.test(input);
+// #####################################################
 
-  if (!isValidExpiryDate && input.length != 0) {
+expiry_input_field.addEventListener("change", function (e) {
+  let input_expiry = e.target.value;
+  expiry_input_field.classList.remove("success-border");
+  validate_expiry(input_expiry);
+});
+
+function validate_expiry(input_expiry) {
+  let isValidExpiryDate = expiry_date_RegEx.test(input_expiry);
+
+  if (!isValidExpiryDate || input_expiry.length < 5) {
     expiry_error_message.classList.remove("hidden");
     expiry_input_field.classList.add("error-border");
     return;
@@ -73,5 +104,6 @@ function validate_expiry(input) {
   expiry_error_message.classList.add("hidden");
   expiry_input_field.classList.remove("error-border");
   expiry_input_field.classList.add("success-border");
+  expiry_input_field.value = input_expiry;
   return;
 }

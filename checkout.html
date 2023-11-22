@@ -58,31 +58,34 @@
     <main>
       <h1 class="red-title">Checkout</h1>
       <form class="checkout-form">
-        <label for="delivery">Delivery Address</label>
+        <label for="delivery">Delivery address</label>
         <input type="text" name="delivery" id="delivery" />
         <label for="city">City</label>
         <input type="text" name="city" id="city" />
-        <label for="zipcode">Zip code</label>
-        <input type="text" name="zipcode" id="zipcode" />
-        <p class="error-message hidden" id="zipcode-error">Please use only numbers.</p>
-        <label for="billing">Billing Address</label>
+        <label for="zipcode">ZIP code</label>
+        <input type="text" name="zipcode" id="zipcode" maxlength="4" />
+        <p class="error-message hidden" id="zipcode-error">Please enter a vaild zip code.</p>
+        <label for="billing">Billing address</label>
         <input type="text" name="billing" id="billing" />
         <label for="cardnumber">Card number</label>
-        <input type="text" name="cardnumber" id="cardnumber" />
-        <p class="error-message hidden" id="cardnumber-error">Please use only numbers.</p>
+        <input type="text" name="cardnumber" id="cardnumber" maxlength="16" />
+        <p class="error-message hidden" id="cardnumber-error">
+          Please enter a valid credit card number.
+        </p>
         <div class="exp-cvv-container">
           <div>
             <label for="expiry">Expiration date</label>
-            <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="mm/yy" />
-            <p class="error-message hidden" id="expiry-error">Please use only numbers.</p>
+            <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY" />
+            <p class="error-message hidden" id="expiry-error">
+              Please enter a vaild expiration date. Divide month and year with a forward slash.
+            </p>
           </div>
           <div>
             <label for="cvv">CVV</label>
             <input type="text" name="cvv" id="cvv" maxlength="3" />
-            <p class="error-message hidden" id="cvv-error">Please use only numbers.</p>
+            <p class="error-message hidden" id="cvv-error">Please enter a valid CVV.</p>
           </div>
         </div>
-
         <label for="terms"
           ><input type="checkbox" name="terms" id="terms" /> I agree to the
           <a href="#" class="strong-link">terms and conditions</a>
