@@ -24,12 +24,6 @@ div.icon-navlinks-wrapper {
   display: flex;
   align-items: center;
 }
-/* a.go-to-cart-link {
-    justify-self: end;
-  }
-  a.logout-link {
-    place-self: end;
-  } */
 svg.logo-svg {
   max-width: 40px;
   max-height: 40px;
@@ -48,8 +42,15 @@ svg.svg-filter-icon {
   width: 14px;
   height: 12px;
 }
+
 img {
   max-width: 100%;
+}
+
+.checkout-form .payment-container,
+.checkout-form .buyer-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .checkout-form .exp-cvv-container {
@@ -103,6 +104,7 @@ p.success-footer {
   margin-top: 1rem;
 }
 
+/* Tablet */
 @media (min-width: 768px) {
   .red-title {
     text-align: left;
@@ -128,5 +130,30 @@ p.success-footer {
   .checkout-success .success-message-container {
     max-width: 75%;
     margin: 3rem auto;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
+  form.checkout-form {
+    /* margin: 0; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+  }
+
+  .checkout-form .buyer-container {
+    grid-column: 1/2;
+  }
+
+  .checkout-form .payment-container {
+    grid-column: 2/3;
+  }
+
+  .checkout-form .buyer-container,
+  .checkout-form .payment-container {
+    max-width: 70%;
+    margin: 0 auto;
   }
 }
