@@ -24,7 +24,6 @@ body {
 main {
   margin: 0 1.5rem;
   padding: 2rem;
-  height: calc(100% - 200px);
 }
 
 h1,
@@ -88,6 +87,7 @@ button {
   color: var(--danger_color);
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
 }
 
 .error-border {
@@ -173,79 +173,6 @@ button {
   margin-top: 1rem;
 }
 
-/* Header */
-header.frontpage-header::after {
-  content: "";
-  display: block;
-  height: 200px;
-  width: 100vw;
-  background-color: var(--overlay_color);
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.img-container {
-  height: 200px;
-  overflow: hidden;
-  width: 100vw;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-position: center 55%;
-  object-fit: cover;
-}
-
-.img-title {
-  color: var(--primary_color);
-  text-align: right;
-  padding: 2rem;
-  font-size: var(--h1_title_size);
-  line-height: 50px;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-}
-
-/* Sign up form */
-.sign-up-form,
-.log-in-form,
-.checkout-form {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0;
-}
-
-.sign-up-form label,
-.log-in-form label,
-.checkout-form label {
-  margin-bottom: 0.25rem;
-}
-
-.sign-up-form input,
-.log-in-form input,
-.checkout-form input:not([type="checkbox"]) {
-  margin-bottom: 1.25rem;
-  padding: 0.5rem;
-  box-shadow: var(--box-shadow);
-}
-
-.sign-up-form .cta,
-.log-in-form .cta,
-.checkout-form .cta {
-  margin-top: 2rem;
-}
-
-/* Footer */
-/* Sign up and Login specific */
-.form-footer {
-  text-align: center;
-}
-
 /* Global footer */
 footer.footer {
   background-color: #220600; /* VARIABLE HERE */
@@ -309,6 +236,87 @@ svg.svg-filter-icon {
   height: 0.75rem;
 }
 
+/* ############## Sign up & Login ############## */
+/* skal flyttes til eget stylesheet */
+
+/* Header */
+header.frontpage-header::after {
+  content: "";
+  display: block;
+  height: 200px;
+  width: 100vw;
+  background-color: var(--overlay_color);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.img-container {
+  height: 200px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-position: center 55%;
+  object-fit: cover;
+}
+
+.img-title {
+  color: var(--primary_color);
+  text-align: right;
+  padding: 2rem;
+  font-size: var(--h1_title_size);
+  line-height: 50px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+/* Main */
+main.sign-up-main,
+main.login-main {
+  height: calc(100% - 200px);
+}
+
+/* forms */
+.sign-up-form,
+.log-in-form,
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.sign-up-form label,
+.log-in-form label,
+.checkout-form label {
+  margin-bottom: 0.25rem;
+}
+
+.sign-up-form input,
+.log-in-form input,
+.checkout-form input:not([type="checkbox"]) {
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.sign-up-form .cta,
+.log-in-form .cta,
+.checkout-form .cta {
+  margin-top: 2rem;
+}
+
+/* Footer */
+.form-footer {
+  text-align: center;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   body.frontpage-body {
@@ -358,7 +366,6 @@ svg.svg-filter-icon {
 }
 
 /* Desktop */
-
 @media (min-width: 1200px) {
   .green-title {
     margin-top: 0;

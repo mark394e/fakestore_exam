@@ -68,6 +68,7 @@ img {
   display: flex;
   gap: 0.8rem;
   align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 #terms-label {

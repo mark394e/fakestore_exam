@@ -123,13 +123,14 @@ checkout_form.addEventListener("submit", function (e) {
   const zipcode = validate_zipcode_input(zipcode_input_field.value);
   const card_number = validate_card_number(card_number_input_field.value);
   const cvv = validate_cvv_input(cvv_input_field.value);
-  validate_checkout(zipcode, card_number, cvv);
+  const expiry = validate_expiry(expiry_input_field.value);
+  validate_checkout(zipcode, card_number, cvv, expiry);
 });
 
-function validate_checkout(zipcode, card_number, cvv) {
+function validate_checkout(zipcode, card_number, cvv, expiry) {
   const isAcceptedTerms = document.querySelector("#terms").checked;
 
-  if (!zipcode || !card_number || !cvv || !isAcceptedTerms) {
+  if (!zipcode || !card_number || !cvv || !expiry || !isAcceptedTerms) {
     if (!isAcceptedTerms) {
       document.querySelector("#terms-error").classList.remove("hidden");
     }
