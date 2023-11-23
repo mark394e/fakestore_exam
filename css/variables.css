@@ -21,7 +21,7 @@
   --success_color: #00b25c;
   --danger_color: #b31e00;
   --color_text_dark: #515151;
-  --overlay_color: rgba(0, 0, 0, 0.7);
+  --overlay_color: rgba(0, 0, 0);
   --footer_color: #220600;
 
   /* Box Shadows */
@@ -58,11 +58,11 @@
   :root {
     /* Fonts */
     --h1_title_size: 5.653rem;
-    --h1_size: 5.653rem;
-    --h2_size: 3.998rem;
-    --h3_size: 2.827rem;
-    --h4_size: 1.999rem;
-    --h5_size: 1.414rem;
-    --h6_size: 1.121rem;
+    --h1_size: 3.998rem;
+    --h2_size: 2.827rem;
+    --h3_size: 1.999rem;
+    --h4_size: 1.414rem;
+    --h5_size: 1.121rem;
+    --h6_size: 0.88rem;
   }
 }

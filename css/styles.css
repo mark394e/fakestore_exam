@@ -180,7 +180,7 @@ header.frontpage-header::after {
   height: 200px;
   width: 100vw;
   background-color: var(--overlay_color);
-  opacity: 0.4;
+  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
@@ -335,7 +335,7 @@ svg.svg-filter-icon {
 
   .img-title {
     max-width: 50vw;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     margin-top: 7.3rem;
     line-height: 4.375rem;
   }
@@ -360,4 +360,17 @@ svg.svg-filter-icon {
 /* Desktop */
 
 @media (min-width: 1200px) {
+  .green-title {
+    margin-top: 0;
+  }
+
+  .img-title {
+    line-height: 5.375rem;
+    padding: 0 2rem;
+  }
+
+  .sign-up-form,
+  .log-in-form {
+    margin: 4rem 0;
+  }
 }
