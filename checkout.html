@@ -56,7 +56,7 @@
       </nav>
     </header>
     <main>
-      <h1 class="red-title">Checkout</h1>
+      <h1 class="red-title checkout-title">Checkout</h1>
       <form class="checkout-form">
         <label for="delivery">Delivery address</label>
         <input type="text" name="delivery" id="delivery" />
@@ -64,34 +64,56 @@
         <input type="text" name="city" id="city" />
         <label for="zipcode">ZIP code</label>
         <input type="text" name="zipcode" id="zipcode" maxlength="4" />
-        <p class="error-message hidden" id="zipcode-error">Please enter a vaild zip code.</p>
+        <p class="error-message hidden" id="zipcode-error">Please enter a vaild zip code</p>
         <label for="billing">Billing address</label>
         <input type="text" name="billing" id="billing" />
         <label for="cardnumber">Card number</label>
         <input type="text" name="cardnumber" id="cardnumber" maxlength="16" />
         <p class="error-message hidden" id="cardnumber-error">
-          Please enter a valid credit card number.
+          Please enter a valid credit card number
         </p>
         <div class="exp-cvv-container">
           <div>
             <label for="expiry">Expiration date</label>
             <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY" />
             <p class="error-message hidden" id="expiry-error">
-              Please enter a vaild expiration date. Divide month and year with a forward slash.
+              Please enter a vaild expiration date
             </p>
           </div>
           <div>
             <label for="cvv">CVV</label>
             <input type="text" name="cvv" id="cvv" maxlength="3" />
-            <p class="error-message hidden" id="cvv-error">Please enter a valid CVV.</p>
+            <p class="error-message hidden" id="cvv-error">Please enter a valid CVV</p>
           </div>
         </div>
-        <label for="terms"
-          ><input type="checkbox" name="terms" id="terms" /> I agree to the
-          <a href="#" class="strong-link">terms and conditions</a>
-        </label>
+        <div id="terms-container">
+          <input type="checkbox" name="terms" id="terms" />
+          <label for="terms" id="terms-label">
+            I agree to the <a href="#" class="strong-link">terms and conditions</a></label
+          >
+        </div>
+        <p class="error-message hidden" id="terms-error">
+          Please indicate that you have read and agree to the Terms and Conditions
+        </p>
         <button type="submit" class="cta pay-btn">Pay</button>
       </form>
+      <section class="checkout-success hidden">
+        <h2 class="checkout-success-title">Thank you for shopping at ODDMENTS!</h2>
+        <div class="success-message-container">
+          <p>
+            Your order has been successfully placed. You will receive an e-mail with your order
+            confirmation!
+          </p>
+          <div class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+            </svg>
+          </div>
+          <p class="success-footer">
+            Not done yet? Shop <a href="productview.html" class="strong-link">here</a>
+          </p>
+        </div>
+      </section>
     </main>
   </body>
 </html>

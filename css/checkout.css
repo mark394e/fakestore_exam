@@ -56,10 +56,49 @@ img {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
-  gap: 0.5rem;
 }
 .checkout-form .exp-cvv-container div {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  max-width: 45%;
+}
+
+#terms-container {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+#terms-label {
+  margin: 0;
+}
+
+#terms-label,
+#terms-label > a {
+  font-size: var(--h5_size);
+}
+
+h2.checkout-success-title {
+  /* font-size: var(--h1_size); */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+div.checkmark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.checkmark svg {
+  fill: var(--tertiary_color);
+  height: 8rem;
+  width: 8rem;
+  margin-inline: auto;
+}
+
+p.success-footer {
+  text-align: center;
+  margin-top: 1rem;
 }

@@ -62,6 +62,7 @@ h6 {
 }
 
 p,
+span,
 label,
 input,
 textarea,
@@ -79,8 +80,8 @@ button {
 }
 
 .hidden {
-  display: none;
-  visibility: hidden;
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .error-message {
@@ -227,7 +228,7 @@ header.frontpage-header::after {
 
 .sign-up-form input,
 .log-in-form input,
-.checkout-form input {
+.checkout-form input:not([type="checkbox"]) {
   margin-bottom: 1.25rem;
   padding: 0.5rem;
   box-shadow: var(--box-shadow);
