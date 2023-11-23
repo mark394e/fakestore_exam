@@ -41,9 +41,10 @@
   --font-weight_bold: 700;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   :root {
     /* Fonts */
+    --h1_title_size: 3.998rem;
     --h1_size: 2.827rem;
     --h2_size: 1.999rem;
     --h3_size: 1.414rem;
@@ -53,21 +54,10 @@
   }
 }
 
-@media (min-width: 768px) {
-  :root {
-    /* Fonts */
-    --h1_size: 3.998rem;
-    --h2_size: 2.827rem;
-    --h3_size: 1.999rem;
-    --h4_size: 1.414rem;
-    --h5_size: 1.121rem;
-    --h6_size: 0.88rem;
-  }
-}
-
 @media (min-width: 1200px) {
   :root {
     /* Fonts */
+    --h1_title_size: 5.653rem;
     --h1_size: 5.653rem;
     --h2_size: 3.998rem;
     --h3_size: 2.827rem;

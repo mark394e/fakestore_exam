@@ -244,3 +244,48 @@ header.frontpage-header::after {
 .form-footer {
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .img-container {
+    height: 100vh;
+    width: 50vw;
+  }
+
+  header.frontpage-header {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  header.frontpage-header::after {
+    height: 100vh;
+    width: 50vw;
+  }
+
+  .img-title {
+    max-width: 50vw;
+    padding: 0 1rem;
+    margin-top: 7.3rem;
+    line-height: 4.375rem;
+  }
+
+  main.sign-up-main {
+    height: 100%;
+    padding: 0 2rem;
+    margin-top: 7.3rem;
+  }
+
+  .sign-up-form {
+    margin: 3rem 0;
+  }
+
+  .form-footer {
+    grid-column: 2 / 3;
+  }
+}
