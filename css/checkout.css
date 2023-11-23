@@ -102,3 +102,31 @@ p.success-footer {
   text-align: center;
   margin-top: 1rem;
 }
+
+@media (min-width: 768px) {
+  .red-title {
+    text-align: left;
+  }
+
+  form.checkout-form {
+    justify-content: center;
+    max-width: 70%;
+    margin: 3rem auto;
+  }
+
+  .checkout-form .cta.pay-btn {
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 3rem;
+  }
+
+  .checkout-success {
+    max-width: 70%;
+    margin-inline: auto;
+  }
+
+  .checkout-success .success-message-container {
+    max-width: 75%;
+    margin: 3rem auto;
+  }
+}

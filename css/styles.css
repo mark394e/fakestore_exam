@@ -241,12 +241,77 @@ header.frontpage-header::after {
 }
 
 /* Footer */
+/* Sign up and Login specific */
 .form-footer {
   text-align: center;
 }
 
+/* Global footer */
+footer.footer {
+  background-color: #220600; /* VARIABLE HERE */
+  padding: 2rem;
+}
+footer.footer a {
+  text-decoration: none;
+  color: var(--primary_color);
+  font-weight: 400;
+  cursor: pointer;
+}
+footer button {
+  background-color: transparent;
+  color: var(--primary_color);
+  border: none;
+  text-align: left;
+  font-size: 1rem; /* variable here!!!!!!!!!!!! */
+  font-family: none;
+}
+h3.categories-footer-heading,
+h3.information-footer-heading {
+  color: var(--primary_color);
+  font-weight: 600;
+}
+svg.instagram-svg,
+svg.facebook-svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+svg.footer-logo-svg {
+  width: 4.375rem;
+  height: 4.375rem;
+  margin-bottom: 2rem;
+}
+section.categories-footer,
+section.footer-information {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+section.some-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+section.payment-methods {
+  margin-bottom: 2rem;
+}
+section.payment-methods img {
+  width: 60%;
+}
+figcaption.payment-img-figcaption {
+  font-size: var(--h6_size);
+}
+section.copyright {
+  text-align: center;
+}
+svg.svg-filter-icon {
+  width: 0.875rem;
+  height: 0.75rem;
+}
+
+/* Tablet */
 @media (min-width: 768px) {
-  body {
+  body.frontpage-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -290,4 +355,9 @@ header.frontpage-header::after {
   .form-footer {
     grid-column: 2 / 3;
   }
+}
+
+/* Desktop */
+
+@media (min-width: 1200px) {
 }
