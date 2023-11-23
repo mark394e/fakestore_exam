@@ -275,13 +275,15 @@ header.frontpage-header::after {
     line-height: 4.375rem;
   }
 
-  main.sign-up-main {
+  main.sign-up-main,
+  main.log-in-main {
     height: 100%;
     padding: 0 2rem;
     margin-top: 7.3rem;
   }
 
-  .sign-up-form {
+  .sign-up-form,
+  .log-in-form {
     margin: 3rem 0;
   }
 
