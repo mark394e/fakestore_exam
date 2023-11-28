@@ -1,7 +1,4 @@
 @import 'variables.css';
-@import 'checkout.css';
-@import 'signup-login.css';
-@import 'styles_product.css';
 
 /* Global styles */
 * {
@@ -24,7 +21,9 @@ body {
   font-family: var(--body_font);
 }
 
-main {
+main.checkout-main,
+main.login-main,
+main.signup-main {
   margin: 0 1.5rem;
   padding: 2rem;
 }

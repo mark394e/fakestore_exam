@@ -1,25 +1,5 @@
-@import "variables.css";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import 'styles.css';
 
-body {
-  background-color: var(--primary_color);
-  color: var(--color_text_dark);
-  font-family: var(--body_font);
-}
-button {
-  font-family: var(--body_font);
-}
-img {
-  max-width: 100%;
-}
-.hidden {
-  display: none;
-  visibility: hidden;
-}
 /* #### BACK TO TOP BUTTON - TEST #### */
 button.back-to-top {
   background-color: transparent;
@@ -448,26 +428,6 @@ p.standard-delivery-desc {
   line-height: var(--line-height);
 }
 /* ############### CART PAGE ############### */
-/* #### Quantity buttons #### */
-div.input-group.plus-minus-input {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-div.plus-minus-input {
-  align-items: center;
-}
-div.plus-minus-input input.input-group-field {
-  text-align: center;
-  padding: 0.5rem;
-  max-width: 3rem;
-  width: 100%;
-  -moz-appearance: textfield; /* removes the input value button */
-}
-button.quantity {
-  border-radius: 0%;
-  padding: 1rem;
-}
 /*  #### Heading - cart page #### (shares the heading class, but also has its own)  */
 h1.cart-heading {
   margin: 2rem 0rem 3rem 0rem;

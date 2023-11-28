@@ -1,43 +1,21 @@
-"use strict";
-/* CART QUANTITY BUTTONS // Nice to have  */
-/* function cartQuantityButtons() {
-  //Empty inputfield from the beginning
-  document.querySelector("input.input-group-field").value = 0;
+'use strict';
 
-  // Plus button: increments the value
-  document.querySelectorAll('[data-quantity="plus"]').forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      updateQuantity(button.getAttribute("data-field"), 1);
-    });
+function user_logout() {
+  const logoutBtn = document.querySelector('.logout-link');
+  logoutBtn.addEventListener('click', () => {
+    sessionStorage.removeItem('email');
+    window.location.href = 'index.html';
   });
-  //Minus button: decrements the value
-  document.querySelectorAll('[data-quantity="minus"]').forEach((button) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      updateQuantity(button.getAttribute("data-field"), -1);
-    });
-  });
-
-  function updateQuantity(fieldName, increment) {
-    const inputField = document.querySelector("input[name=" + fieldName + "]");
-    let currentValue = parseInt(inputField.value);
-    if (!isNaN(currentValue) && (currentValue > 0 || increment === 1)) {
-      inputField.value = currentValue + increment;
-    } else {
-      inputField.value = 0;
-    }
-  }
 }
 
-cartQuantityButtons(); */
+user_logout();
 
 /* #### LOCALSTORAGE PRODUCTS ADDED TO CART #### */
 // cart = the 'cart' we get from local storage
 let cart = getCartFromLocalStorage();
 
 // For use in click eventListener later on
-const goToCheckoutButton = document.querySelector("button.checkout-btn-cart");
+const goToCheckoutButton = document.querySelector('button.checkout-btn-cart');
 
 // We call the updateCart after getting the cart,
 // to check the length and adding/removing the
@@ -55,20 +33,20 @@ function removeProductFromCart(productId) {
 
 // Function that sets the updatedCart, and call showCartProducts again
 function updateCart(updatedCart) {
-  console.log("Updated cart length:", updatedCart.length);
-  localStorage.setItem("cart", JSON.stringify(updatedCart));
+  console.log('Updated cart length:', updatedCart.length);
+  localStorage.setItem('cart', JSON.stringify(updatedCart));
 
   // Check if the cart is empty
   const cartIsEmpty = updatedCart.length === 0;
 
   // Find the circle (red dot) in the HTML
-  const redDotOnCart = document.querySelector("circle.red-dot-on-cart");
+  const redDotOnCart = document.querySelector('circle.red-dot-on-cart');
   // Add or remove the hidden class
   if (cartIsEmpty) {
-    redDotOnCart.classList.add("hidden");
-    document.querySelector("button.checkout-btn-cart").classList.add("hidden");
+    redDotOnCart.classList.add('hidden');
+    document.querySelector('button.checkout-btn-cart').classList.add('hidden');
   } else {
-    redDotOnCart.classList.remove("hidden");
+    redDotOnCart.classList.remove('hidden');
   }
 
   // Calculate total and update in HTML
@@ -96,16 +74,16 @@ function calculateDelivery(total) {
 // Show the prices in HTML
 function updateCalculationInHTML(total, delivery) {
   // Element that show the total
-  const totalPriceElement = document.querySelector("p.order-total-value");
-  totalPriceElement.textContent = total.toFixed(2) + ",-";
+  const totalPriceElement = document.querySelector('p.order-total-value');
+  totalPriceElement.textContent = total.toFixed(2) + ',-';
 
   // Element that show the delivery
-  const deliveryPriceElement = document.querySelector("p.order-delivery-value");
-  deliveryPriceElement.textContent = delivery + ",-";
+  const deliveryPriceElement = document.querySelector('p.order-delivery-value');
+  deliveryPriceElement.textContent = delivery + ',-';
 
   // Element that shows the subtotal
-  const subtotalPriceElement = document.querySelector("p.order-subtotal-value");
-  subtotalPriceElement.textContent = (total + delivery).toFixed(2) + ",-";
+  const subtotalPriceElement = document.querySelector('p.order-subtotal-value');
+  subtotalPriceElement.textContent = (total + delivery).toFixed(2) + ',-';
   /*   console.log(total); */
 }
 
@@ -116,73 +94,71 @@ function handleUpdateCartEvent(event) {
 }
 
 // Listen for the event in productview.js
-window.addEventListener("updateCartEvent", handleUpdateCartEvent);
+window.addEventListener('updateCartEvent', handleUpdateCartEvent);
 
 // Function where we get the cart and convert it to a JS object
 // and specifies an empty array as default value
 function getCartFromLocalStorage() {
-  return JSON.parse(localStorage.getItem("cart")) || [];
+  return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
 // Function that shows the products in the cart
 function showCartProducts(cart) {
-  const cartContainer = document.querySelector("section.cart-container");
+  const cartContainer = document.querySelector('section.cart-container');
 
   // Empty the container
-  cartContainer.innerHTML = "";
+  cartContainer.innerHTML = '';
 
   // Check if there is products in the cart
   if (cart.length === 0) {
-    document.querySelector("h1.heading").textContent = "The cart is empty!";
+    document.querySelector('h1.heading').textContent = 'The cart is empty!';
   } else {
     cart.forEach((product) => {
       // Create HTML elements for the products
-      const productDiv = document.createElement("div");
-      productDiv.classList.add("cart-item");
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('cart-item');
 
       // Create a wrapper div for item text
-      const imgWrapper = document.createElement("div");
-      imgWrapper.classList.add("item-img-wrapper");
+      const imgWrapper = document.createElement('div');
+      imgWrapper.classList.add('item-img-wrapper');
 
-      const img = document.createElement("img");
+      const img = document.createElement('img');
       img.src = product.image;
-      img.setAttribute("alt", "Image of the product");
-      img.classList.add("product-in-cart-img");
+      img.setAttribute('alt', 'Image of the product');
+      img.classList.add('product-in-cart-img');
       imgWrapper.appendChild(img);
 
       // Append the wrapper div to the productDiv
       productDiv.appendChild(imgWrapper);
 
       // Create a wrapper div for item text
-      const textWrapper = document.createElement("div");
-      textWrapper.classList.add("item-text-wrapper");
+      const textWrapper = document.createElement('div');
+      textWrapper.classList.add('item-text-wrapper');
 
-      const h2 = document.createElement("h2");
+      const h2 = document.createElement('h2');
       h2.textContent = product.title;
-      h2.classList.add("item-name");
+      h2.classList.add('item-name');
       textWrapper.appendChild(h2);
 
-      const pCategory = document.createElement("p");
+      const pCategory = document.createElement('p');
       pCategory.textContent = product.category;
-      pCategory.classList.add("item-category");
+      pCategory.classList.add('item-category');
       textWrapper.appendChild(pCategory);
 
       // Append the wrapper div to the productDiv
       productDiv.appendChild(textWrapper);
 
-      const pPrice = document.createElement("p");
-      pPrice.textContent = product.price + ",-";
-      pPrice.classList.add("item-price");
+      const pPrice = document.createElement('p');
+      pPrice.textContent = product.price + ',-';
+      pPrice.classList.add('item-price');
       productDiv.appendChild(pPrice);
 
       // Delete item button
-      const deleteProductFromCart = document.createElement("button");
-      deleteProductFromCart.textContent = "Remove";
-      deleteProductFromCart.classList.add("delete-item-from-cart-button");
+      const deleteProductFromCart = document.createElement('button');
+      deleteProductFromCart.textContent = 'Remove';
+      deleteProductFromCart.classList.add('delete-item-from-cart-button');
       productDiv.appendChild(deleteProductFromCart);
-      deleteProductFromCart.addEventListener("click", () =>
-        removeProductFromCart(product.id)
-      );
+      deleteProductFromCart.addEventListener('click', () => removeProductFromCart(product.id));
 
       // Add the product to the container
       cartContainer.appendChild(productDiv);
@@ -191,8 +167,8 @@ function showCartProducts(cart) {
 }
 
 // Go to checkout page - event on button
-goToCheckoutButton.addEventListener("click", () => {
-  location.href = "../checkout.html";
+goToCheckoutButton.addEventListener('click', () => {
+  location.href = '../checkout.html';
 });
 
 showCartProducts(cart);
