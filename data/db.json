@@ -69,6 +69,11 @@
       "email": "anna@live.dk",
       "password": "PassWord123!",
       "id": 13
+    },
+    {
+      "email": "a@a.dk",
+      "password": "Ayanami1997!",
+      "id": 14
     }
   ]
 }
