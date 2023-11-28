@@ -17,6 +17,9 @@ hideShowAccordionContent();
 
 footerCategoryLinksClickEvent();
 
+// Remove diabled attribute on css file
+document.querySelector("#singleproduct_styling").removeAttribute("disabled");
+
 /*  
 Earlier versions of redirecting the footer category links
 function redirectToProductView(categoryLink) {
