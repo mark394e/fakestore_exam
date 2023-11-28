@@ -1,4 +1,4 @@
-@import 'variables.css';
+@import "variables.css";
 * {
   margin: 0;
   padding: 0;
@@ -101,8 +101,7 @@ footer button {
   color: var(--primary_color);
   border: none;
   text-align: left;
-  font-size: 1rem; /* !!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!! */
-  font-family: none;
+  font-size: var(--p_size);
 }
 h3.categories-footer-heading,
 h3.information-footer-heading {
@@ -181,7 +180,7 @@ div.top-level-button-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: white; /* !!!!!!!!!!!!!!! VARIABLE COLOR HERE !!!!!!!!!!!!!!!! */
+  background-color: var(--product_bg);
   border-bottom: 0.1rem solid var(--tertiary_color);
 }
 div.top-level-button-wrapper button {
@@ -260,20 +259,20 @@ p.product-price {
   padding: 0.1rem;
 }
 h2.product-title {
-  font-size: 1rem; /* !!!!!!!!!! VARIABLE HERE  !!!!!!!!!!!!!! */
+  font-size: var(--p_size);
   font-weight: var(--font-weight_reg);
   line-height: var(--line-height);
 }
 div.product-info {
-  background-color: #7f8181; /* !!!!!!!!!!!! REMEMBER TO PUT THIS IN A VARIABLE !!!!!!!!!!!!!!! */
+  background-color: var(--product_info_bg);
   height: 5rem;
   padding: 0.5rem 0.5rem 0rem 0.5rem;
-  color: white; /* !!!!!!!!!!!!!!!! VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
+  color: var(--product_bg);
 }
 div.product-img-container {
   width: 100%;
   height: auto;
-  background-color: white; /* !!!!!!!!!!!!! VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
+  background-color: var(--product_bg);
   padding: 1rem;
 }
 div.product-img-wrapper {
@@ -288,7 +287,7 @@ div.add-product-button {
   justify-content: end;
   margin: 0;
   padding: 0;
-  background-color: #7f8181; /* !!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!! */
+  background-color: var(--product_info_bg);
 }
 div.add-product-button button {
   border: none;
@@ -296,7 +295,7 @@ div.add-product-button button {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  font-size: 1.5rem; /* !!!!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!! */
+  font-size: var(--add_product_btn_size);
   font-weight: var(--font-weight_medium);
   background-color: var(--tertiary_color);
   cursor: pointer;
@@ -345,7 +344,7 @@ h1.h1-product-title {
   color: var(--secondary_color);
 }
 h2.h2-product-category {
-  font-size: 1rem; /* !!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!! */
+  font-size: var(--p_size);
   margin-bottom: 2rem;
   font-weight: var(--font-weight_reg);
 }
@@ -406,7 +405,7 @@ button.accordion-btn {
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: white; /* !!!!!!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!!! */
+  background-color: var(--product_bg);
   padding: 0.8rem 1rem 0.8rem 1rem;
   width: 100%;
   max-width: 21.875rem;
@@ -493,7 +492,7 @@ div.cart-item {
   padding: 1rem;
 }
 div.item-img-wrapper {
-  background-color: white; /* !!!!!!!!!!! VARIABLE HERE!!!!!!!!!! */
+  background-color: var(--product_bg);
   padding: 1rem;
   max-width: 7rem;
   width: 100%;
@@ -621,7 +620,7 @@ circle.red-dot-on-cart {
     margin: 3rem;
   }
   button.delete-item-from-cart-button {
-    font-size: 0.8rem; /* !!!!!!!! VARIABLE HERE !!!!!!!!!!!!! */
+    font-size: var(--remove_product_btn_size);
   }
   div.total-wrapper,
   div.delivery-wrapper,
@@ -667,7 +666,7 @@ circle.red-dot-on-cart {
     background-color: var(--secondary_color);
   }
   button.delete-item-from-cart-button {
-    font-size: 1rem; /* !!!!!!!! VARIABLE HERE !!!!!!!!!!!!! */
+    font-size: var(--p_size);
   }
   div.total-wrapper,
   div.delivery-wrapper,
