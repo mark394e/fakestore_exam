@@ -64,6 +64,7 @@ function isUserLoggedIn() {
 }
 
 // Fetch the clicked-from-the-footer category
+// Arturos API with our own endpoint: https://arturomora.com/fsa/products/category/${clickedCategoryFromSingleviewFooter}
 async function footerCategoryClickedFromSingleview() {
   window.scrollTo(0, 0);
   try {
@@ -137,6 +138,7 @@ function filterButtonClickEvents() {
 // In this function we fetch the products that match the querystring
 //and the 'this.dataset.category' refelcts one of the category filter buttons
 //if the user clicks on 'electronics', 'this' is electronics
+// Arturos API with our own endpoint: https://arturomora.com/fsa/products/category/${this.dataset.category}
 async function filterProductsByCategory() {
   window.scrollTo(0, 0);
   filterButtons.classList.add("hidden");
@@ -165,6 +167,7 @@ async function filterProductsByCategory() {
 }
 
 // Our default fetch function, output is all products
+// Arturos API: https://arturomora.com/fsa/products
 async function fetchAllProducts() {
   /* active button logic under here, and till the hastag seperation */
   toggleButton.classList.remove("active-button");

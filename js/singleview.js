@@ -41,6 +41,7 @@ function footerCategoryLinksClickEvent() {
 }
 
 // Fetch the clicked product via. the ID
+// Arturos API, with our own endpoint: https://arturomora.com/fsa/products/${id}
 async function fetchSingleProduct() {
   try {
     const getSingleProduct = await fetch(
