@@ -22,8 +22,8 @@ body {
 }
 
 main.checkout-main,
-main.login-main,
-main.signup-main {
+main.log-in-main,
+main.sign-up-main {
   margin: 0 1.5rem;
   padding: 2rem;
 }
