@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
 
 :root {
   /* Fonts */
   /* (Root size, so the rem relates to that) */
   font-size: 16px;
-  --display_font: "Lora", serif;
-  --body_font: "Poppins", sans-serif;
+  --display_font: 'Lora', serif;
+  --body_font: 'Poppins', sans-serif;
   --h1_title_size: 2.827rem;
   --h1_size: 1.999rem;
   --h2_size: 1.414rem;
@@ -13,6 +13,7 @@
   --h4_size: 0.88rem;
   --h5_size: 0.7rem;
   --h6_size: 0.56rem;
+  --p_size: 1rem;
 
   /* Colors */
   --primary_color: #dedede;

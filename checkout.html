@@ -66,58 +66,43 @@
           <input type="text" name="city" id="city" />
           <label for="zipcode">ZIP code</label>
           <input type="text" name="zipcode" id="zipcode" maxlength="4" />
-          <p class="error-message hidden" id="zipcode-error">Please enter a vaild zip code</p>
+          <p class="error-message hidden" id="zipcode-error" aria-hidden="true" tabindex="-1">Please enter a vaild zip code</p>
           <label for="billing">Billing address</label>
           <input type="text" name="billing" id="billing" />
         </div>
         <div class="payment-container">
           <label for="cardnumber">Card number</label>
           <input type="text" name="cardnumber" id="cardnumber" maxlength="16" />
-          <p class="error-message hidden" id="cardnumber-error">
-            Please enter a valid credit card number
-          </p>
+          <p class="error-message hidden" id="cardnumber-error" aria-hidden="true" tabindex="-2">Please enter a valid credit card number</p>
           <div class="exp-cvv-container">
             <div>
               <label for="expiry">Expiration date</label>
               <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY" />
-              <p class="error-message hidden" id="expiry-error">
-                Please enter a vaild expiration date
-              </p>
+              <p class="error-message hidden" id="expiry-error" aria-hidden="true" tabindex="-3">Please enter a vaild expiration date</p>
             </div>
             <div>
               <label for="cvv">CVV</label>
               <input type="text" name="cvv" id="cvv" maxlength="3" />
-              <p class="error-message hidden" id="cvv-error">Please enter a valid CVV</p>
+              <p class="error-message hidden" id="cvv-error" aria-hidden="true" tabindex="-4">Please enter a valid CVV</p>
             </div>
           </div>
           <div id="terms-container">
             <input type="checkbox" name="terms" id="terms" />
             <label for="terms" id="terms-label">
               I agree to the
-              <a href="#" class="strong-link" aria-label="Read our terms and conditions"
-                >terms and conditions</a
-              ></label
+              <a href="#" class="strong-link" aria-label="Read our terms and conditions">terms and conditions</a></label
             >
           </div>
-          <p class="error-message hidden" id="terms-error">
-            Please indicate that you have read and agree to the Terms and Conditions
-          </p>
+          <p class="error-message hidden" id="terms-error" aria-hidden="true" tabindex="-5">Please indicate that you have read and agree to the Terms and Conditions</p>
           <button type="submit" class="cta pay-btn">Pay</button>
         </div>
       </form>
       <section class="checkout-success hidden">
         <h2 class="checkout-success-title">Thank you for shopping at ODDMENTS!</h2>
         <div class="success-message-container">
-          <p>
-            Your order has been successfully placed. You will receive an e-mail with your order
-            confirmation!
-          </p>
+          <p>Your order has been successfully placed. You will receive an e-mail with your order confirmation!</p>
           <div class="checkmark">
-            <svg
-              aria-label="green checkmark"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-            >
+            <svg aria-label="green checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
               <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
             </svg>
           </div>
@@ -147,10 +132,7 @@
           <a href="#" aria-label="Go to Oddments instagram">
             <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="instagram-svg">
               <g clip-path="url(#clip0_99_148)">
-                <path
-                  d="M30.6247 7.36328C29.2859 7.36328 28.2819 8.36737 28.2819 9.70615C28.2819 11.0449 29.2859 12.049 30.6247 12.049C31.9635 12.049 32.9676 11.0449 32.9676 9.70615C32.9676 8.36737 31.9635 7.36328 30.6247 7.36328Z"
-                  fill="#DEDEDE"
-                />
+                <path d="M30.6247 7.36328C29.2859 7.36328 28.2819 8.36737 28.2819 9.70615C28.2819 11.0449 29.2859 12.049 30.6247 12.049C31.9635 12.049 32.9676 11.0449 32.9676 9.70615C32.9676 8.36737 31.9635 7.36328 30.6247 7.36328Z" fill="#DEDEDE" />
                 <path
                   d="M20.0817 10.3756C14.5592 10.3756 10.2082 14.894 10.2082 20.2491C10.2082 25.6043 14.7266 30.1227 20.0817 30.1227C25.4369 30.1227 29.9553 25.6043 29.9553 20.2491C29.9553 14.894 25.6042 10.3756 20.0817 10.3756ZM20.0817 26.6084C16.5674 26.6084 13.7225 23.7635 13.7225 20.2491C13.7225 16.7348 16.5674 13.8899 20.0817 13.8899C23.596 13.8899 26.4409 16.7348 26.4409 20.2491C26.4409 23.7635 23.596 26.6084 20.0817 26.6084Z"
                   fill="#DEDEDE"
@@ -189,10 +171,7 @@
           <img src="img/payment.webp" alt="Icons of Oddments payment methods" />
           <figcaption class="payment-img-figcaption">
             Image borrowed from:
-            <a
-              href="https://kundeservice.mecindo.dk/hc/da/articles/6463208271901-Hvilke-betalingsmuligheder-har-jeg-"
-              >mecindo.dk</a
-            >
+            <a href="https://kundeservice.mecindo.dk/hc/da/articles/6463208271901-Hvilke-betalingsmuligheder-har-jeg-">mecindo.dk</a>
           </figcaption>
         </section>
         <section class="footer-logo">
@@ -208,9 +187,7 @@
         </section>
       </div>
       <section class="copyright">
-        <p class="copyright-text">
-          &copy; Markus Hoffmann Lund & Anna Maria Lester | Webdevelopment UX | 2023
-        </p>
+        <p class="copyright-text">&copy; Markus Hoffmann Lund & Anna Maria Lester | Webdevelopment UX | 2023</p>
       </section>
     </footer>
   </body>

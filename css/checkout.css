@@ -1,51 +1,4 @@
-@import "variables.css";
-
-.red-title {
-  color: var(--secondary_color);
-  text-align: center;
-}
-
-nav.menu-nav {
-  margin-bottom: 0.5rem;
-  padding: 0.8rem;
-  background-color: var(--primary_color);
-  box-shadow: var(--box-shadow);
-  z-index: 1000;
-}
-ul.navlinks {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-ul.navlinks li {
-  list-style-type: none;
-}
-div.icon-navlinks-wrapper {
-  display: flex;
-  align-items: center;
-}
-svg.logo-svg {
-  max-width: 40px;
-  max-height: 40px;
-  width: 100%;
-}
-svg.cart-svg {
-  width: 44px;
-  height: 40px;
-}
-svg.logout-svg {
-  width: 30px;
-  height: 30px;
-}
-
-svg.svg-filter-icon {
-  width: 14px;
-  height: 12px;
-}
-
-img {
-  max-width: 100%;
-}
+@import 'variables.css';
 
 .checkout-form .payment-container,
 .checkout-form .buyer-container {
@@ -62,6 +15,10 @@ img {
   display: flex;
   flex-direction: column;
   max-width: 45%;
+}
+
+.exp-cvv-container label {
+  font-size: var(--h5_size);
 }
 
 #terms-container {
@@ -81,7 +38,6 @@ img {
 }
 
 h2.checkout-success-title {
-  /* font-size: var(--h1_size); */
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -107,10 +63,6 @@ p.success-footer {
 
 /* Tablet */
 @media (min-width: 768px) {
-  .red-title {
-    text-align: left;
-  }
-
   form.checkout-form {
     justify-content: center;
     max-width: 70%;
@@ -137,6 +89,10 @@ p.success-footer {
 /* Desktop */
 
 @media (min-width: 1200px) {
+  h1.red-title {
+    text-align: left;
+  }
+
   form.checkout-form {
     /* margin: 0; */
     display: flex;

@@ -1,0 +1,144 @@
+/* ############## Sign up & Login ############## */
+
+/* Header */
+header.frontpage-header::after {
+  content: '';
+  display: block;
+  height: 200px;
+  width: 100vw;
+  background-color: var(--overlay_color);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.img-container {
+  height: 200px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-position: center 55%;
+  object-fit: cover;
+}
+
+.img-title {
+  color: var(--primary_color);
+  text-align: right;
+  padding: 2rem;
+  font-size: var(--h1_title_size);
+  line-height: 50px;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+}
+
+/* Main */
+main.sign-up-main,
+main.login-main {
+  height: calc(100% - 200px);
+}
+
+/* forms */
+.sign-up-form,
+.log-in-form,
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.sign-up-form label,
+.log-in-form label,
+.checkout-form label {
+  margin-bottom: 0.25rem;
+}
+
+.sign-up-form input,
+.log-in-form input,
+.checkout-form input:not([type='checkbox']) {
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.sign-up-form .cta,
+.log-in-form .cta,
+.checkout-form .cta {
+  margin-top: 2rem;
+}
+
+/* Footer */
+.form-footer {
+  text-align: center;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  body.frontpage-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .img-container {
+    height: 100vh;
+    width: 50vw;
+  }
+
+  header.frontpage-header {
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+
+  header.frontpage-header::after {
+    height: 100vh;
+    width: 50vw;
+  }
+
+  .img-title {
+    max-width: 50vw;
+    padding: 0 0.5rem;
+    margin-top: 7.3rem;
+    line-height: 4.375rem;
+  }
+
+  main.sign-up-main,
+  main.log-in-main {
+    height: 100%;
+    padding: 0 2rem;
+    margin-top: 7.3rem;
+  }
+
+  .sign-up-form,
+  .log-in-form {
+    margin: 3rem 0;
+  }
+
+  .form-footer {
+    grid-column: 2 / 3;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .green-title {
+    margin-top: 0;
+  }
+
+  .img-title {
+    line-height: 5.375rem;
+    padding: 0 2rem;
+  }
+
+  .sign-up-form,
+  .log-in-form {
+    margin: 4rem 0;
+  }
+}

@@ -59,6 +59,11 @@
       "email": "markus@lie.dk",
       "password": "Ayanami1997!",
       "id": 11
+    },
+    {
+      "email": "markus@lund.com",
+      "password": "Ayanami1997!",
+      "id": 12
     }
   ]
 }
