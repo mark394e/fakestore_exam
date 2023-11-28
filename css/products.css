@@ -1,4 +1,4 @@
-@import 'styles.css';
+@import "styles.css";
 
 /* #### BACK TO TOP BUTTON - TEST #### */
 button.back-to-top {
@@ -204,7 +204,7 @@ h1.heading {
   font-family: var(--display_font);
   font-weight: var(--font-weight_medium);
   text-align: center;
-  margin: 0.4rem 0.4rem 3rem 0.4rem;
+  margin: 3rem 1rem 3rem 1rem;
   color: var(--secondary_color);
 }
 /* #### Product section ####  */
@@ -306,7 +306,7 @@ svg.back-arrow-icon {
   height: 0.875rem;
 }
 section.single-product-wrapper {
-  margin: 1rem 0rem 10rem 0rem;
+  margin: 1.5rem 1.5rem 10rem 1.5rem;
   padding: 0rem 2rem 0rem 2rem;
 }
 div.img-product-wrapper {
@@ -428,10 +428,14 @@ p.standard-delivery-desc {
   line-height: var(--line-height);
 }
 /* ############### CART PAGE ############### */
-/*  #### Heading - cart page #### (shares the heading class, but also has its own)  */
+/*  #### Heading - cart page ####  */
 h1.cart-heading {
-  margin: 2rem 0rem 3rem 0rem;
+  margin: 3rem 0rem 3rem 0rem;
   font-weight: var(--font-weight_reg);
+  font-family: var(--display_font);
+  text-align: center;
+  margin: 3rem 1rem 3rem 1rem;
+  color: var(--secondary_color);
 }
 /* #### Product in cart content #### */
 div.desktop-cart-wrapper {
@@ -442,7 +446,7 @@ section.cart-container {
   flex-direction: column;
   align-items: center;
   gap: 4rem;
-  margin: 2rem;
+  margin: 0 1.5rem;
 }
 div.cart-item {
   display: flex;
@@ -597,6 +601,10 @@ circle.red-dot-on-cart {
 }
 /* DESKTOP ADAPTIONS - PRODUCTVIEW PAGE | SINGLEVIEW | CART */
 @media (min-width: 1200px) {
+  h1.heading {
+    text-align: left;
+    margin: 3rem 6rem 3rem 6rem;
+  }
   section#products {
     margin: 2rem 6rem 10rem 6rem;
     /*    gap: 2rem; */

@@ -4,16 +4,6 @@ user_logout();
 
 isUserLoggedIn();
 
-function isUserLoggedIn() {
-  const logged_in_user = sessionStorage.getItem("email");
-  if (!logged_in_user) {
-    window.location.href = "index.html";
-    return;
-  }
-  document.querySelector("#products_styling").removeAttribute("disabled");
-  /*   return; */
-}
-
 // Loader element for ux + fakestoreApi has failed a few times in the proces,
 //so to keep the user informed we implemented this on top of our catch-error message
 const loader = document.querySelector("svg#loader-element");
@@ -62,7 +52,18 @@ toggleFilterButtons();
 const urlParamsCategory = new URLSearchParams(window.location.search);
 const clickedCategoryFromSingleviewFooter = urlParamsCategory.get("category");
 
-// Fetch the clicked from the footer category
+// Function that checks if the user is logged in
+// if logged in, remove disabled on products.css
+function isUserLoggedIn() {
+  const logged_in_user = sessionStorage.getItem("email");
+  if (!logged_in_user) {
+    window.location.href = "index.html";
+    return;
+  }
+  document.querySelector("#products_styling").removeAttribute("disabled");
+}
+
+// Fetch the clicked-from-the-footer category
 async function footerCategoryClickedFromSingleview() {
   window.scrollTo(0, 0);
   try {
