@@ -21,6 +21,7 @@ header.frontpage-header {
 body {
   background-color: var(--primary_color);
   color: var(--color_text_dark);
+  font-family: var(--body_font);
 }
 
 main {
@@ -35,7 +36,7 @@ h4,
 h5,
 h6 {
   font-family: var(--display_font);
-  font-weight: 400;
+  font-weight: var(--font-weight_reg);
 }
 
 h1 {
@@ -181,12 +182,15 @@ button {
 }
 
 /* Global navigation */
+/* ### Menu navigation ### */
 nav.menu-nav {
   margin-bottom: 0.5rem;
   padding: 0.8rem;
   background-color: var(--primary_color);
   box-shadow: var(--box-shadow);
   z-index: 1000;
+  position: sticky;
+  top: 0;
 }
 ul.navlinks {
   display: flex;
@@ -196,27 +200,22 @@ ul.navlinks {
 ul.navlinks li {
   list-style-type: none;
 }
-div.icon-navlinks-wrapper {
+li.icon-navlinks-wrapper {
   display: flex;
   align-items: center;
 }
 svg.logo-svg {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   width: 100%;
 }
 svg.cart-svg {
-  width: 44px;
-  height: 40px;
+  width: 2.75rem;
+  height: 2.5rem;
 }
 svg.logout-svg {
-  width: 30px;
-  height: 30px;
-}
-
-svg.svg-filter-icon {
-  width: 14px;
-  height: 12px;
+  width: 1.875rem;
+  height: 1.875rem;
 }
 
 /* Global footer */
@@ -227,7 +226,7 @@ footer.footer {
 footer.footer a {
   text-decoration: none;
   color: var(--primary_color);
-  font-weight: 400;
+  font-weight: var(--font-weight_reg);
   cursor: pointer;
 }
 footer button {
@@ -236,12 +235,12 @@ footer button {
   border: none;
   text-align: left;
   font-size: var(--p_size);
-  font-family: none;
 }
 h3.categories-footer-heading,
 h3.information-footer-heading {
   color: var(--primary_color);
-  font-weight: 600;
+  font-weight: var(--font-weight_semi_bold);
+  font-family: var(--display_font);
 }
 svg.instagram-svg,
 svg.facebook-svg {
@@ -280,4 +279,40 @@ section.copyright {
 svg.svg-filter-icon {
   width: 0.875rem;
   height: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  footer.footer {
+    padding: 4rem;
+  }
+  section.payment-methods img {
+    width: 40%;
+  }
+  footer.footer div.top-of-footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+  section.payment-methods {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  section.footer-logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 1200px) {
+  footer.footer {
+    padding: 6rem;
+  }
 }

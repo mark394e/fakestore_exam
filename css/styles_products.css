@@ -1,4 +1,4 @@
-@import "variables.css";
+@import 'variables.css';
 * {
   margin: 0;
   padding: 0;
@@ -50,7 +50,7 @@ header.header-navigation {
   position: sticky;
   top: 0;
 }
-/* ### Menu navigation ### */
+/* ### Menu navigation - er flyttet til styles.css ### */
 nav.menu-nav {
   margin-bottom: 0.5rem;
   padding: 0.8rem;
