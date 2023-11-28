@@ -106,13 +106,13 @@ button {
 
 .strong-link {
   color: var(--tertiary_color);
-  font-weight: 700;
+  font-weight: var(--font-weight_semi_bold);
   text-decoration: none;
 }
 
 .cta {
   background-color: var(--tertiary_color);
-  font-weight: 700;
+  font-weight: var(--font-weight_semi_bold);
   color: var(--primary_color);
   border: none;
   padding: 0.6rem 1rem;

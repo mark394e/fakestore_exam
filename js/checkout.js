@@ -113,7 +113,8 @@ function validate_expiry(input_expiry) {
   expiry_input_field.classList.remove("error-border");
   expiry_input_field.classList.add("success-border");
   expiry_input_field.value = input_expiry;
-  return;
+  let expiry = input_expiry;
+  return expiry;
 }
 
 // #####################################################
@@ -131,6 +132,7 @@ function validate_checkout(zipcode, card_number, cvv, expiry) {
   const isAcceptedTerms = document.querySelector("#terms").checked;
 
   if (!zipcode || !card_number || !cvv || !expiry || !isAcceptedTerms) {
+    console.log(zipcode, card_number, cvv, expiry, isAcceptedTerms);
     if (!isAcceptedTerms) {
       document.querySelector("#terms-error").classList.remove("hidden");
     }

@@ -139,22 +139,23 @@ p.success-footer {
 @media (min-width: 1200px) {
   form.checkout-form {
     /* margin: 0; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     max-width: 100%;
-  }
-
-  .checkout-form .buyer-container {
-    grid-column: 1/2;
-  }
-
-  .checkout-form .payment-container {
-    grid-column: 2/3;
   }
 
   .checkout-form .buyer-container,
   .checkout-form .payment-container {
-    max-width: 70%;
+    max-width: 40%;
+    flex: 1;
     margin: 0 auto;
+  }
+
+  .checkout-success-title {
+    font-size: var(--h1_size);
+  }
+
+  .checkout-success .success-message-container {
+    max-width: 35%;
   }
 }
