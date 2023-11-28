@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/products.css" />
+    <link
+      rel="stylesheet"
+      href="css/products.css"
+      id="products_styling"
+      disabled
+    />
     <script src="js/script_productview.js" type="module"></script>
     <link rel="icon" type="image/svg+xml" href="img/oddments-favicon.svg" />
     <title>ODDMENTS | Products</title>
@@ -17,7 +22,13 @@
           <li class="home">
             <div class="icon-link-container">
               <a href="productview.html" aria-label="Go to the product page">
-                <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" class="logo-svg" aria-label="Oddments logo, green background with white 'O'" tabindex="0">
+                <svg
+                  viewBox="0 0 35 35"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="logo-svg"
+                  aria-label="Oddments logo, green background with white 'O'"
+                  tabindex="0"
+                >
                   <rect width="35" height="35" fill="#00615C" />
                   <path
                     d="M17.9356 33C15.2175 33 12.8999 32.5483 10.9828 31.6448C9.09442 30.7413 7.56366 29.5414 6.39056 28.0451C5.21745 26.5205 4.35908 24.8406 3.81545 23.0055C3.27182 21.1703 3 19.3352 3 17.5C3 15.7213 3.30043 13.9285 3.90129 12.1216C4.53076 10.2864 5.46066 8.60656 6.69099 7.08197C7.94993 5.55738 9.5236 4.32923 11.412 3.39754C13.3004 2.46585 15.5179 2 18.0644 2C20.6681 2 22.9142 2.46585 24.8026 3.39754C26.691 4.32923 28.2361 5.57149 29.4378 7.12432C30.6395 8.64891 31.5265 10.3147 32.0987 12.1216C32.6996 13.9285 33 15.7213 33 17.5C33 19.2505 32.6853 21.0291 32.0558 22.8361C31.4549 24.643 30.525 26.3229 29.2661 27.8757C28.0358 29.4003 26.4764 30.6425 24.588 31.6025C22.6996 32.5342 20.4821 33 17.9356 33ZM18.4077 29.9085C19.8956 29.9085 21.1402 29.5556 22.1416 28.8497C23.1431 28.1157 23.9442 27.1699 24.5451 26.0123C25.1459 24.8547 25.5751 23.5984 25.8326 22.2432C26.0901 20.8597 26.2189 19.5187 26.2189 18.2199C26.2189 16.2719 26.0472 14.4932 25.7039 12.8839C25.3605 11.2746 24.8312 9.89117 24.1159 8.73361C23.4006 7.54781 22.485 6.64435 21.3691 6.02322C20.2818 5.37386 18.9943 5.0633 17.5064 5.09153C16.0472 5.11976 14.8169 5.51503 13.8154 6.27732C12.814 7.01138 12.0129 7.97131 11.412 9.1571C10.8112 10.3147 10.382 11.5852 10.1245 12.9686C9.86695 14.352 9.7382 15.6931 9.7382 16.9918C9.7382 18.3188 9.88126 19.7304 10.1674 21.2268C10.4821 22.7231 10.9685 24.1348 11.6266 25.4617C12.2847 26.7887 13.1717 27.8616 14.2876 28.6803C15.4034 29.4991 16.7768 29.9085 18.4077 29.9085Z"
@@ -29,21 +40,42 @@
           </li>
           <li class="icon-navlinks-wrapper">
             <div class="icon-link-container">
-              <a href="cart.html" class="go-to-cart-link" aria-label="Go to shopping cart page">
-                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" class="cart-svg" aria-label="Icon of a shopping-bag" tabindex="0">
+              <a
+                href="cart.html"
+                class="go-to-cart-link"
+                aria-label="Go to shopping cart page"
+              >
+                <svg
+                  viewBox="0 0 48 48"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="cart-svg"
+                  aria-label="Icon of a shopping-bag"
+                  tabindex="0"
+                >
                   <path
                     d="M12 44C10.9 44 9.95833 43.6083 9.175 42.825C8.39167 42.0417 8 41.1 8 40V16C8 14.9 8.39167 13.9583 9.175 13.175C9.95833 12.3917 10.9 12 12 12H16C16 9.8 16.7833 7.91667 18.35 6.35C19.9167 4.78333 21.8 4 24 4C26.2 4 28.0833 4.78333 29.65 6.35C31.2167 7.91667 32 9.8 32 12H36C37.1 12 38.0417 12.3917 38.825 13.175C39.6083 13.9583 40 14.9 40 16V40C40 41.1 39.6083 42.0417 38.825 42.825C38.0417 43.6083 37.1 44 36 44H12ZM12 40H36V16H32V20C32 20.5667 31.8083 21.0417 31.425 21.425C31.0417 21.8083 30.5667 22 30 22C29.4333 22 28.9583 21.8083 28.575 21.425C28.1917 21.0417 28 20.5667 28 20V16H20V20C20 20.5667 19.8083 21.0417 19.425 21.425C19.0417 21.8083 18.5667 22 18 22C17.4333 22 16.9583 21.8083 16.575 21.425C16.1917 21.0417 16 20.5667 16 20V16H12V40ZM20 12H28C28 10.9 27.6083 9.95833 26.825 9.175C26.0417 8.39167 25.1 8 24 8C22.9 8 21.9583 8.39167 21.175 9.175C20.3917 9.95833 20 10.9 20 12Z"
                     fill="#515151"
                   />
 
                   <!-- Red dot on cart -->
-                  <circle cx="10" cy="40" r="8" class="red-dot-on-cart hidden"></circle>
+                  <circle
+                    cx="10"
+                    cy="40"
+                    r="8"
+                    class="red-dot-on-cart hidden"
+                  ></circle>
                 </svg>
               </a>
             </div>
             <div class="icon-link-container">
               <a href="#" class="logout-link" aria-label="Log out of Oddments">
-                <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" class="logout-svg" aria-label="Icon symbolizing the log out action" tabindex="0">
+                <svg
+                  viewBox="0 0 35 35"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="logout-svg"
+                  aria-label="Icon symbolizing the log out action"
+                  tabindex="0"
+                >
                   <g clip-path="url(#clip0_81_1502)">
                     <path
                       d="M3.88889 35C2.81944 35 1.90394 34.6192 1.14236 33.8576C0.380787 33.0961 0 32.1806 0 31.1111V3.88889C0 2.81944 0.380787 1.90394 1.14236 1.14236C1.90394 0.380787 2.81944 0 3.88889 0H17.5V3.88889H3.88889V31.1111H17.5V35H3.88889ZM25.2778 27.2222L22.6042 24.4028L27.5625 19.4444H11.6667V15.5556H27.5625L22.6042 10.5972L25.2778 7.77778L35 17.5L25.2778 27.2222Z"
@@ -67,11 +99,20 @@
       <nav id="filter-buttons-navigation">
         <div class="top-level-button-wrapper">
           <div class="all-products-button-wrapper">
-            <button class="all-products-button active-button">All products</button>
+            <button class="all-products-button active-button">
+              All products
+            </button>
           </div>
           <div class="show-filter-buttons-wrapper">
-            <button id="toggle-filter-buttons" class="show-filter-buttons-button">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="svg-filter-icon">
+            <button
+              id="toggle-filter-buttons"
+              class="show-filter-buttons-button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 -960 960 960"
+                class="svg-filter-icon"
+              >
                 <path
                   d="M710-150q-63 0-106.5-43.5T560-300q0-63 43.5-106.5T710-450q63 0 106.5 43.5T860-300q0 63-43.5 106.5T710-150Zm0-80q29 0 49.5-20.5T780-300q0-29-20.5-49.5T710-370q-29 0-49.5 20.5T640-300q0 29 20.5 49.5T710-230Zm-550-30v-80h320v80H160Zm90-250q-63 0-106.5-43.5T100-660q0-63 43.5-106.5T250-810q63 0 106.5 43.5T400-660q0 63-43.5 106.5T250-510Zm0-80q29 0 49.5-20.5T320-660q0-29-20.5-49.5T250-730q-29 0-49.5 20.5T180-660q0 29 20.5 49.5T250-590Zm230-30v-80h320v80H480Zm230 320ZM250-660Z"
                 />
@@ -91,8 +132,16 @@
       <h1 class="heading">All products</h1>
       <!-- loader element -->
       <div class="loader-wrapper">
-        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-gear" viewBox="0 0 16 16" id="loader-element" aria-label="Icon that illustrates a process is ongoing">
-          <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="bi bi-gear"
+          viewBox="0 0 16 16"
+          id="loader-element"
+          aria-label="Icon that illustrates a process is ongoing"
+        >
+          <path
+            d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"
+          />
           <path
             d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"
           />
@@ -124,8 +173,19 @@
 
     <!-- BACK TO TOP BUTTON - TEST -->
     <button class="back-to-top hiddenBtn" tabindex="0">
-      <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="back-to-top-icon w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5" />
+      <svg
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="back-to-top-icon w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
+        />
       </svg>
     </button>
     <!-- Footer -->
@@ -133,10 +193,18 @@
       <div class="top-of-footer-wrapper">
         <section class="categories-footer">
           <h3 class="categories-footer-heading">Categories</h3>
-          <button data-category="men's clothing" class="category-link">Men's clothing</button>
-          <button data-category="women's clothing" class="category-link">Women's clothing</button>
-          <button data-category="jewelery" class="category-link">Jewelry</button>
-          <button data-category="electronics" class="category-link">Electronics</button>
+          <button data-category="men's clothing" class="category-link">
+            Men's clothing
+          </button>
+          <button data-category="women's clothing" class="category-link">
+            Women's clothing
+          </button>
+          <button data-category="jewelery" class="category-link">
+            Jewelry
+          </button>
+          <button data-category="electronics" class="category-link">
+            Electronics
+          </button>
         </section>
         <section class="footer-information">
           <h3 class="information-footer-heading">Information</h3>
@@ -146,9 +214,17 @@
         </section>
         <section class="some-links">
           <a href="#" aria-label="Go to Oddments instagram">
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="instagram-svg" aria-label="Instagram logo">
+            <svg
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              class="instagram-svg"
+              aria-label="Instagram logo"
+            >
               <g clip-path="url(#clip0_99_148)">
-                <path d="M30.6247 7.36328C29.2859 7.36328 28.2819 8.36737 28.2819 9.70615C28.2819 11.0449 29.2859 12.049 30.6247 12.049C31.9635 12.049 32.9676 11.0449 32.9676 9.70615C32.9676 8.36737 31.9635 7.36328 30.6247 7.36328Z" fill="#DEDEDE" />
+                <path
+                  d="M30.6247 7.36328C29.2859 7.36328 28.2819 8.36737 28.2819 9.70615C28.2819 11.0449 29.2859 12.049 30.6247 12.049C31.9635 12.049 32.9676 11.0449 32.9676 9.70615C32.9676 8.36737 31.9635 7.36328 30.6247 7.36328Z"
+                  fill="#DEDEDE"
+                />
                 <path
                   d="M20.0817 10.3756C14.5592 10.3756 10.2082 14.894 10.2082 20.2491C10.2082 25.6043 14.7266 30.1227 20.0817 30.1227C25.4369 30.1227 29.9553 25.6043 29.9553 20.2491C29.9553 14.894 25.6042 10.3756 20.0817 10.3756ZM20.0817 26.6084C16.5674 26.6084 13.7225 23.7635 13.7225 20.2491C13.7225 16.7348 16.5674 13.8899 20.0817 13.8899C23.596 13.8899 26.4409 16.7348 26.4409 20.2491C26.4409 23.7635 23.596 26.6084 20.0817 26.6084Z"
                   fill="#DEDEDE"
@@ -166,7 +242,12 @@
             </svg>
           </a>
           <a href="#" aria-label="Go to Oddments facebook">
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="facebook-svg" aria-label="Facebook logo">
+            <svg
+              viewBox="0 0 40 40"
+              xmlns="http://www.w3.org/2000/svg"
+              class="facebook-svg"
+              aria-label="Facebook logo"
+            >
               <g clip-path="url(#clip0_99_146)">
                 <path
                   d="M40 20.0501C40 8.98246 31.04 0 20 0C8.96 0 0 8.98246 0 20.0501C0 29.7544 6.88 37.8346 16 39.6992V26.0652H12V20.0501H16V15.0376C16 11.1679 19.14 8.02005 23 8.02005H28V14.0351H24C22.9 14.0351 22 14.9373 22 16.0401V20.0501H28V26.0652H22V40C32.1 38.9975 40 30.4561 40 20.0501Z"
@@ -185,16 +266,30 @@
       <div class="bottom-of-footer-wrapper">
         <section class="payment-methods">
           <figure>
-            <img src="img/payment.webp" alt="Icons of Oddments payment methods" />
+            <img
+              src="img/payment.webp"
+              alt="Icons of Oddments payment methods"
+            />
             <figcaption class="payment-img-figcaption" tabindex="0">
               Image borrowed from:
-              <a href="https://kundeservice.mecindo.dk/hc/da/articles/6463208271901-Hvilke-betalingsmuligheder-har-jeg-" aria-label="Go to image original source" tabindex="0">mecindo.dk</a>
+              <a
+                href="https://kundeservice.mecindo.dk/hc/da/articles/6463208271901-Hvilke-betalingsmuligheder-har-jeg-"
+                aria-label="Go to image original source"
+                tabindex="0"
+                >mecindo.dk</a
+              >
             </figcaption>
           </figure>
         </section>
         <section class="footer-logo">
           <a href="#" aria-label="Go to the product page">
-            <svg viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg" class="footer-logo-svg" aria-label="Oddments logo, green background with white 'O'" tabindex="0">
+            <svg
+              viewBox="0 0 35 35"
+              xmlns="http://www.w3.org/2000/svg"
+              class="footer-logo-svg"
+              aria-label="Oddments logo, green background with white 'O'"
+              tabindex="0"
+            >
               <rect width="35" height="35" fill="#00615C" />
               <path
                 d="M17.9356 33C15.2175 33 12.8999 32.5483 10.9828 31.6448C9.09442 30.7413 7.56366 29.5414 6.39056 28.0451C5.21745 26.5205 4.35908 24.8406 3.81545 23.0055C3.27182 21.1703 3 19.3352 3 17.5C3 15.7213 3.30043 13.9285 3.90129 12.1216C4.53076 10.2864 5.46066 8.60656 6.69099 7.08197C7.94993 5.55738 9.5236 4.32923 11.412 3.39754C13.3004 2.46585 15.5179 2 18.0644 2C20.6681 2 22.9142 2.46585 24.8026 3.39754C26.691 4.32923 28.2361 5.57149 29.4378 7.12432C30.6395 8.64891 31.5265 10.3147 32.0987 12.1216C32.6996 13.9285 33 15.7213 33 17.5C33 19.2505 32.6853 21.0291 32.0558 22.8361C31.4549 24.643 30.525 26.3229 29.2661 27.8757C28.0358 29.4003 26.4764 30.6425 24.588 31.6025C22.6996 32.5342 20.4821 33 17.9356 33ZM18.4077 29.9085C19.8956 29.9085 21.1402 29.5556 22.1416 28.8497C23.1431 28.1157 23.9442 27.1699 24.5451 26.0123C25.1459 24.8547 25.5751 23.5984 25.8326 22.2432C26.0901 20.8597 26.2189 19.5187 26.2189 18.2199C26.2189 16.2719 26.0472 14.4932 25.7039 12.8839C25.3605 11.2746 24.8312 9.89117 24.1159 8.73361C23.4006 7.54781 22.485 6.64435 21.3691 6.02322C20.2818 5.37386 18.9943 5.0633 17.5064 5.09153C16.0472 5.11976 14.8169 5.51503 13.8154 6.27732C12.814 7.01138 12.0129 7.97131 11.412 9.1571C10.8112 10.3147 10.382 11.5852 10.1245 12.9686C9.86695 14.352 9.7382 15.6931 9.7382 16.9918C9.7382 18.3188 9.88126 19.7304 10.1674 21.2268C10.4821 22.7231 10.9685 24.1348 11.6266 25.4617C12.2847 26.7887 13.1717 27.8616 14.2876 28.6803C15.4034 29.4991 16.7768 29.9085 18.4077 29.9085Z"
@@ -205,7 +300,10 @@
         </section>
       </div>
       <section class="copyright">
-        <p class="copyright-text">&copy; Markus Hoffmann Lund & Anna Maria Lester | Webdevelopment UX | 2023</p>
+        <p class="copyright-text">
+          &copy; Markus Hoffmann Lund & Anna Maria Lester | Webdevelopment UX |
+          2023
+        </p>
       </section>
     </footer>
   </body>

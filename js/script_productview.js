@@ -2,7 +2,7 @@ import { user_logout } from "./logout.mjs";
 
 user_logout();
 
-/* isUserLoggedIn(); */
+isUserLoggedIn();
 
 function isUserLoggedIn() {
   const logged_in_user = sessionStorage.getItem("email");
@@ -10,7 +10,8 @@ function isUserLoggedIn() {
     window.location.href = "index.html";
     return;
   }
-  return;
+  document.querySelector("#products_styling").removeAttribute("disabled");
+  /*   return; */
 }
 
 // Loader element for ux + fakestoreApi has failed a few times in the proces,
