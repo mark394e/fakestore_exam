@@ -46,30 +46,26 @@ main.login-main {
 
 /* forms */
 .sign-up-form,
-.log-in-form,
-.checkout-form {
+.log-in-form {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
 }
 
 .sign-up-form label,
-.log-in-form label,
-.checkout-form label {
+.log-in-form label {
   margin-bottom: 0.25rem;
 }
 
 .sign-up-form input,
-.log-in-form input,
-.checkout-form input:not([type='checkbox']) {
+.log-in-form input {
   margin-bottom: 1.25rem;
   padding: 0.5rem;
   box-shadow: var(--box-shadow);
 }
 
 .sign-up-form .cta,
-.log-in-form .cta,
-.checkout-form .cta {
+.log-in-form .cta {
   margin-top: 2rem;
 }
 

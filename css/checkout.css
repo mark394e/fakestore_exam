@@ -61,6 +61,26 @@ p.success-footer {
   margin-top: 1rem;
 }
 
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.checkout-form label {
+  margin-bottom: 0.25rem;
+}
+
+.checkout-form input:not([type='checkbox']) {
+  margin-bottom: 1.25rem;
+  padding: 0.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.checkout-form .cta {
+  margin-top: 2rem;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   form.checkout-form {
