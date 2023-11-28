@@ -40,7 +40,7 @@ header.frontpage-header::after {
 
 /* Main */
 main.sign-up-main,
-main.login-main {
+main.log-in-main {
   height: calc(100% - 200px);
 }
 
