@@ -19,14 +19,14 @@
       <h2 class="green-title">Sign up</h2>
       <form class="sign-up-form">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
-        <p class="error-message hidden" id="email-error" aria-hidden="true" tabindex="-1">Please enter a valid email address.</p>
+        <input type="email" name="email" id="email" aria-describedby="email-error" />
+        <p class="error-message hidden" id="email-error" role="alert">Please enter a valid email address.</p>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <p class="error-message hidden" id="password-error" aria-hidden="true" tabindex="-2">Password must be between 8 to 20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.</p>
+        <input type="password" name="password" id="password" aria-describedby="password-error" />
+        <p class="error-message hidden" id="password-error" role="alert">Password must be between 8 to 20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.</p>
         <label for="confirm_password">Confirm Password</label>
-        <input type="password" name="confirm_password" id="confirm_password" />
-        <p class="error-message hidden" id="confirm-password-error" aria-hidden="true" tabindex="-3">Passwords do not match.</p>
+        <input type="password" name="confirm_password" id="confirm_password" aria-describedby="confirm-password-error" />
+        <p class="error-message hidden" id="confirm-password-error" role="alert">Passwords do not match.</p>
         <button type="submit" class="cta sign-up-btn">Sign up</button>
         <div class="spinner hidden" aria-hidden="true"></div>
       </form>

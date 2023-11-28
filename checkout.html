@@ -65,35 +65,35 @@
           <label for="city">City</label>
           <input type="text" name="city" id="city" />
           <label for="zipcode">ZIP code</label>
-          <input type="text" name="zipcode" id="zipcode" maxlength="4" />
-          <p class="error-message hidden" id="zipcode-error" aria-hidden="true" tabindex="-1">Please enter a vaild zip code</p>
+          <input type="text" name="zipcode" id="zipcode" maxlength="4" aria-describedby="zipcode-error" />
+          <p class="error-message hidden" id="zipcode-error" role="alert">Please enter a vaild zip code</p>
           <label for="billing">Billing address</label>
           <input type="text" name="billing" id="billing" />
         </div>
         <div class="payment-container">
           <label for="cardnumber">Card number</label>
-          <input type="text" name="cardnumber" id="cardnumber" maxlength="16" />
-          <p class="error-message hidden" id="cardnumber-error" aria-hidden="true" tabindex="-2">Please enter a valid credit card number</p>
+          <input type="text" name="cardnumber" id="cardnumber" maxlength="16" aria-describedby="cardnumber-error" />
+          <p class="error-message hidden" id="cardnumber-error" role="alert">Please enter a valid credit card number</p>
           <div class="exp-cvv-container">
             <div>
               <label for="expiry">Expiration date</label>
-              <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY" />
-              <p class="error-message hidden" id="expiry-error" aria-hidden="true" tabindex="-3">Please enter a vaild expiration date</p>
+              <input type="text" name="expiry" id="expiry" maxlength="5" placeholder="MM/YY" aria-describedby="expiry-error" />
+              <p class="error-message hidden" id="expiry-error" role="alert">Please enter a vaild expiration date</p>
             </div>
             <div>
               <label for="cvv">CVV</label>
-              <input type="text" name="cvv" id="cvv" maxlength="3" />
-              <p class="error-message hidden" id="cvv-error" aria-hidden="true" tabindex="-4">Please enter a valid CVV</p>
+              <input type="text" name="cvv" id="cvv" maxlength="3" aria-describedby="cvv-error" />
+              <p class="error-message hidden" id="cvv-error" role="alert">Please enter a valid CVV</p>
             </div>
           </div>
           <div id="terms-container">
-            <input type="checkbox" name="terms" id="terms" />
+            <input type="checkbox" name="terms" id="terms" aria-describedby="terms-error" />
             <label for="terms" id="terms-label">
               I agree to the
               <a href="#" class="strong-link" aria-label="Read our terms and conditions">terms and conditions</a></label
             >
           </div>
-          <p class="error-message hidden" id="terms-error" aria-hidden="true" tabindex="-5">Please indicate that you have read and agree to the Terms and Conditions</p>
+          <p class="error-message hidden" id="terms-error" role="alert">Please indicate that you have read and agree to the Terms and Conditions</p>
           <button type="submit" class="cta pay-btn">Pay</button>
         </div>
       </form>
