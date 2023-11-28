@@ -4,9 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-:root {
-  font-size: 16px;
-}
 
 body {
   background-color: var(--primary_color);
@@ -23,8 +20,36 @@ img {
   display: none;
   visibility: hidden;
 }
+/* #### BACK TO TOP BUTTON - TEST #### */
+button.back-to-top {
+  background-color: transparent;
+  position: fixed;
+  right: 3rem;
+  bottom: 5rem;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  opacity: 100%;
+  transition: opacity 0.5s;
+}
+button.back-to-top:hover {
+  opacity: 60%;
+}
+.hiddenBtn {
+  display: none;
+  opacity: 0%;
+}
+svg.back-to-top-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--tertiary_color);
+}
 
 /* ########## SPECIFIC STYLING STARTS HERE ##########  */
+header.header-navigation {
+  position: sticky;
+  top: 0;
+}
 /* ### Menu navigation ### */
 nav.menu-nav {
   margin-bottom: 0.5rem;
@@ -32,6 +57,8 @@ nav.menu-nav {
   background-color: var(--primary_color);
   box-shadow: var(--box-shadow);
   z-index: 1000;
+  position: sticky;
+  top: 0;
 }
 ul.navlinks {
   display: flex;
@@ -41,7 +68,7 @@ ul.navlinks {
 ul.navlinks li {
   list-style-type: none;
 }
-div.icon-navlinks-wrapper {
+li.icon-navlinks-wrapper {
   display: flex;
   align-items: center;
 }
@@ -58,15 +85,15 @@ svg.logout-svg {
   width: 1.875rem;
   height: 1.875rem;
 }
-/* #### Footer #### */
+/* ######## Footer ######## */
 footer.footer {
-  background-color: #220600; /* VARIABLE HERE */
+  background-color: var(--footer_color);
   padding: 2rem;
 }
 footer.footer a {
   text-decoration: none;
   color: var(--primary_color);
-  font-weight: 400;
+  font-weight: var(--font-weight_reg);
   cursor: pointer;
 }
 footer button {
@@ -74,13 +101,13 @@ footer button {
   color: var(--primary_color);
   border: none;
   text-align: left;
-  font-size: 1rem; /* variable here!!!!!!!!!!!! */
+  font-size: 1rem; /* !!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!! */
   font-family: none;
 }
 h3.categories-footer-heading,
 h3.information-footer-heading {
   color: var(--primary_color);
-  font-weight: 600;
+  font-weight: var(--font-weight_semi_bold);
 }
 svg.instagram-svg,
 svg.facebook-svg {
@@ -120,7 +147,7 @@ svg.svg-filter-icon {
   width: 0.875rem;
   height: 0.75rem;
 }
-/* ### Loader element ###
+/* ######## Loader element ########
 for letting the user know that the system is working behind the scenes
 - is only visible until the code reaches the catch and sends the errormessage (and only in case of an error) */
 div.loader-wrapper {
@@ -148,13 +175,13 @@ svg#loader-element {
 /* #### Filterbutton nav #### */
 nav#filter-buttons-navigation {
   position: sticky;
-  top: 0;
+  top: 72.4px; /* placed directly under the main navigation */
 }
 div.top-level-button-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  background-color: white; /* VARIABLE COLOR HERE */
+  background-color: white; /* !!!!!!!!!!!!!!! VARIABLE COLOR HERE !!!!!!!!!!!!!!!! */
   border-bottom: 0.1rem solid var(--tertiary_color);
 }
 div.top-level-button-wrapper button {
@@ -196,8 +223,9 @@ div.filter-buttons button:hover {
 /* #### Heading on productview #### 'All products' / category name */
 h1.heading {
   font-family: var(--display_font);
+  font-weight: var(--font-weight_medium);
   text-align: center;
-  margin: 0.4rem;
+  margin: 0.4rem 0.4rem 3rem 0.4rem;
   color: var(--secondary_color);
 }
 /* #### Product section ####  */
@@ -208,7 +236,17 @@ section#products {
   gap: 1.5rem;
   margin: 2rem 2rem 10rem 2rem;
 }
-/* product article */
+/* Product article */
+/* Accessibility for the product image bc. we use it as a backgroundimage, so we can not set the alt text */
+.sr-only {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
 article.product {
   flex: 1 0 150px;
   display: flex;
@@ -222,20 +260,20 @@ p.product-price {
   padding: 0.1rem;
 }
 h2.product-title {
-  font-size: 1rem; /* variable here !!!!!!!!!!!!!! */
-  font-weight: 400;
-  line-height: 1.8rem; /* variable here!!!!!!!!!!!! */
+  font-size: 1rem; /* !!!!!!!!!! VARIABLE HERE  !!!!!!!!!!!!!! */
+  font-weight: var(--font-weight_reg);
+  line-height: var(--line-height);
 }
 div.product-info {
-  background-color: #7f8181; /* REMEMBER TO PUT THIS IN A VARIABLE */
+  background-color: #7f8181; /* !!!!!!!!!!!! REMEMBER TO PUT THIS IN A VARIABLE !!!!!!!!!!!!!!! */
   height: 5rem;
   padding: 0.5rem 0.5rem 0rem 0.5rem;
-  color: white; /* VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
+  color: white; /* !!!!!!!!!!!!!!!! VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
 }
 div.product-img-container {
   width: 100%;
   height: auto;
-  background-color: white; /* VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
+  background-color: white; /* !!!!!!!!!!!!! VARIABLE HERE!!!!!!!!!!!!!!!!!!!!! */
   padding: 1rem;
 }
 div.product-img-wrapper {
@@ -250,16 +288,21 @@ div.add-product-button {
   justify-content: end;
   margin: 0;
   padding: 0;
-  background-color: #7f8181; /* VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!! */
+  background-color: #7f8181; /* !!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!! */
 }
 div.add-product-button button {
   border: none;
   color: var(--primary_color);
   margin: 0;
-  padding: 0.1rem 0.4rem 0.1rem 0.4rem;
-  font-size: var(--h3_size);
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem; /* !!!!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!! */
+  font-weight: var(--font-weight_medium);
   background-color: var(--tertiary_color);
   cursor: pointer;
+}
+div.add-product-button button:hover {
+  background-color: var(--success_color);
 }
 /* ############### SINGLEVIEW PAGE ############### */
 button.go-back-button {
@@ -267,7 +310,7 @@ button.go-back-button {
   padding: 0.8rem 1rem 0.8rem 1rem;
   width: 100%;
   max-width: 8rem;
-  font-weight: 600;
+  font-weight: var(--font-weight_semi_bold);
   text-align: left;
   background-color: transparent;
   display: flex;
@@ -297,14 +340,14 @@ div.img-product-wrapper img.single-product-img {
 /* #### Info about product #### */
 h1.h1-product-title {
   text-align: left;
-  font-weight: 400;
+  font-weight: var(--font-weight_reg);
   margin-bottom: 0.1rem;
   color: var(--secondary_color);
 }
 h2.h2-product-category {
-  font-size: 1rem; /* VARIABLE HERE */
+  font-size: 1rem; /* !!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!! */
   margin-bottom: 2rem;
-  font-weight: 400;
+  font-weight: var(--font-weight_reg);
 }
 p.price-desc {
   font-size: var(--h5_size);
@@ -315,13 +358,13 @@ p.price {
 }
 /* Product description */
 p.product-desc {
-  line-height: 1.8rem;
+  line-height: var(--line-height);
   margin-bottom: 1rem;
 }
 /* Read more a-tag in product description */
 a.read-more {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: var(--font-weight_semi_bold);
   color: var(--color_text_dark);
 }
 a.read-more:hover {
@@ -330,7 +373,8 @@ a.read-more:hover {
 div.btn-wrapper-singleview {
   margin-bottom: 2rem;
 }
-button.add-to-cart-btn-singleview {
+button.add-to-cart-btn-singleview,
+button.checkout-btn-cart {
   border: none;
   background-color: var(--tertiary_color);
   text-align: center;
@@ -338,11 +382,19 @@ button.add-to-cart-btn-singleview {
   width: 100%;
   max-width: 21.875rem;
   color: var(--primary_color);
-  font-weight: 400;
+  font-weight: var(--font-weight_semi_bold);
   margin: 1.5rem 0rem 1rem 0rem;
   text-transform: uppercase;
 }
-button.add-to-cart-btn-singleview:hover {
+/* The checkout button in cart - size controlling | max-width used as a exception */
+@media (max-width: 400px) {
+  button.checkout-btn-cart {
+    max-width: 17.875rem;
+  }
+}
+
+button.add-to-cart-btn-singleview:hover,
+button.checkout-btn-cart:hover {
   box-shadow: var(--box-shadow);
 }
 /* #### Accordions / collapsables #### */
@@ -354,7 +406,7 @@ button.accordion-btn {
   justify-content: space-between;
   align-items: center;
   border: none;
-  background-color: white; /* VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!!! */
+  background-color: white; /* !!!!!!!!!!!!!!!!!!!!!! VARIABLE HERE !!!!!!!!!!!!!!!!!!!!!!!! */
   padding: 0.8rem 1rem 0.8rem 1rem;
   width: 100%;
   max-width: 21.875rem;
@@ -381,20 +433,20 @@ button.active-accordion {
 }
 p.product-rating-desc {
   margin-bottom: 0.5rem;
-  line-height: 1.8rem;
+  line-height: var(--line-height);
 }
 p.accoridon-product-content {
-  font-weight: 600;
-  line-height: 1.8rem;
+  font-weight: var(--font-weight_semi_bold);
+  line-height: var(--line-height);
 }
 span.express-span,
 span.standard-span {
-  font-weight: 600;
+  font-weight: var(--font-weight_semi_bold);
 }
 p.express-delivery-desc,
 p.standard-delivery-desc {
   margin-bottom: 0.5rem;
-  line-height: 1.8rem;
+  line-height: var(--line-height);
 }
 /* ############### CART PAGE ############### */
 /* #### Quantity buttons #### */
@@ -416,6 +468,91 @@ div.plus-minus-input input.input-group-field {
 button.quantity {
   border-radius: 0%;
   padding: 1rem;
+}
+/*  #### Heading - cart page #### (shares the heading class, but also has its own)  */
+h1.cart-heading {
+  margin: 2rem 0rem 3rem 0rem;
+  font-weight: var(--font-weight_reg);
+}
+/* #### Product in cart content #### */
+div.desktop-cart-wrapper {
+  margin-bottom: 3rem;
+}
+section.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin: 2rem;
+}
+div.cart-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+div.item-img-wrapper {
+  background-color: white; /* !!!!!!!!!!! VARIABLE HERE!!!!!!!!!! */
+  padding: 1rem;
+  max-width: 7rem;
+  width: 100%;
+}
+h2.item-name {
+  font-size: var(--h5_size);
+  font-weight: var(--font-weight_medium);
+}
+p.item-category {
+  font-size: var(--h6_size);
+}
+div.item-text-wrapper {
+  inline-size: 10rem;
+}
+p.item-price {
+  font-size: var(--h5_size);
+}
+button.delete-item-from-cart-button {
+  color: var(--secondary_color);
+  font-size: var(--h5_size);
+  background-color: transparent;
+  border: none;
+  align-self: baseline;
+}
+button.delete-item-from-cart-button:hover {
+  font-weight: var(--font-weight_semi_bold);
+}
+
+/* #### Calculation part of cart #### */
+section.calculation-container {
+  display: flex;
+  flex-direction: column;
+}
+div.total-wrapper,
+div.delivery-wrapper,
+div.subtotal-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1rem 0rem 1rem;
+  margin: 2rem;
+}
+div.expense-overview {
+  background-color: var(--secondary_color);
+  color: var(--primary_color);
+  padding: 1rem 0rem 1rem 0rem;
+}
+div.btn-wrapper-cart {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+/* #### Add to cart button #### */
+div.add-product-button button.add-product-success,
+div.btn-wrapper-singleview button.add-product-success {
+  background-color: var(--success_color);
+  color: var(--overlay_color);
+}
+circle.red-dot-on-cart {
+  fill: var(--danger_color);
 }
 
 /* ############### RESPONSIVE SETTINGS ############### */
@@ -449,7 +586,7 @@ button.quantity {
     align-items: flex-end;
   }
 }
-/* TABLET ADAPTIONS - PRODUCTVIEW PAGE */
+/* TABLET ADAPTIONS - PRODUCTVIEW PAGE | SINGLEVIEW | CART */
 @media (min-width: 768px) {
   section#products {
     margin: 2rem 4rem 10rem 4rem;
@@ -457,9 +594,7 @@ button.quantity {
   article.product {
     flex: 1 0 200px;
   }
-}
-/* TABLET ADAPTIONS - SINGLEVIEW PAGE */
-@media (min-width: 768px) {
+  /* #### SINGLEVIEW PAGE #### */
   section.single-product-wrapper {
     margin: 2rem 3rem 15rem 3rem;
   }
@@ -476,8 +611,32 @@ button.quantity {
   div.btn-wrapper-singleview {
     text-align: left;
   }
+  /* #### CART PAGE #### */
+  h1.cart-heading {
+    text-align: left;
+    padding: 1rem 1rem 0rem 1rem;
+    margin: 3rem;
+  }
+  section.cart-container {
+    margin: 3rem;
+  }
+  button.delete-item-from-cart-button {
+    font-size: 0.8rem; /* !!!!!!!! VARIABLE HERE !!!!!!!!!!!!! */
+  }
+  div.total-wrapper,
+  div.delivery-wrapper,
+  div.subtotal-wrapper {
+    padding: 1rem 1rem 0rem 1rem;
+    margin: 3rem;
+  }
+  div.item-text-wrapper {
+    inline-size: 15rem;
+  }
+  div.desktop-cart-wrapper {
+    margin-bottom: 6rem;
+  }
 }
-/* DESKTOP ADAPTIONS - PRODUCTVIEW PAGE */
+/* DESKTOP ADAPTIONS - PRODUCTVIEW PAGE | SINGLEVIEW | CART */
 @media (min-width: 1200px) {
   section#products {
     margin: 2rem 6rem 10rem 6rem;
@@ -486,14 +645,49 @@ button.quantity {
   article.product {
     flex: 1 0 250px;
   }
-}
-/* DESKTOP ADAPTIONS - SINGLEVIEW PAGE */
-@media (min-width: 1200px) {
+  /* #### SINGLEVIEW PAGE #### */
   section.single-product-wrapper {
     margin: 3rem 6rem 15rem 6rem;
   }
-  /* footer */
+  /* #### CART PAGE #### */
+  div.item-text-wrapper {
+    inline-size: 20rem;
+  }
+  div.desktop-cart-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-bottom: 8rem;
+  }
+  section.calculation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 2rem;
+    padding: 1rem 2rem 0rem 2rem;
+    background-color: var(--secondary_color);
+  }
+  button.delete-item-from-cart-button {
+    font-size: 1rem; /* !!!!!!!! VARIABLE HERE !!!!!!!!!!!!! */
+  }
+  div.total-wrapper,
+  div.delivery-wrapper,
+  div.subtotal-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+    margin: 1rem;
+    color: var(--primary_color);
+  }
+  p.order-delivery-value {
+    padding-bottom: 2rem;
+    border-bottom: 0.01rem solid var(--primary_color);
+  }
+  /* footer on cart page */
   footer.footer {
     padding: 6rem;
+  }
+  footer.cart-footer {
+    padding: 4rem;
   }
 }
