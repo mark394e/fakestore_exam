@@ -3,6 +3,9 @@
 const spinner = document.querySelector(".spinner");
 const sign_up_btn = document.querySelector(".sign-up-btn");
 
+// #####################################################
+
+// Validation on blur
 document.querySelector("#email").addEventListener("blur", function () {
   validate_email();
 });
@@ -15,6 +18,7 @@ document.querySelector("#confirm_password").addEventListener("blur", function ()
   validate_confirm_password();
 });
 
+// Validation on submit
 document.querySelector(".sign-up-form").addEventListener("submit", function (event) {
   event.preventDefault();
   const user_email = validate_email();
@@ -26,9 +30,9 @@ document.querySelector(".sign-up-form").addEventListener("submit", function (eve
 // ##################################################
 
 function validate_email() {
-  const email_RegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const email_RegEx = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // exampl@example.com
   const user_email = document.querySelector("#email").value;
-  const isValidEmail = email_RegEx.test(user_email);
+  const isValidEmail = email_RegEx.test(user_email); // true or false according to regex
   const email_input_field = document.querySelector("#email");
   const error_message = document.querySelector("#email-error");
 
@@ -49,9 +53,9 @@ function validate_email() {
 // ##################################################
 
 function validate_password() {
-  const password_RegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,20}$/;
+  const password_RegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).{8,20}$/; // Password must be between 8 to 20 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character.
   const user_password = document.getElementById("password").value;
-  const isValidPassword = password_RegEx.test(user_password);
+  const isValidPassword = password_RegEx.test(user_password); // true or false according to regex
   const password_input_field = document.getElementById("password");
   const error_message = document.querySelector("#password-error");
 
@@ -110,6 +114,7 @@ function validate_sign_up(user_email, user_password, user_confirmed_password) {
 
 // ##################################################
 
+// adding user to db.json (JSON-Server)
 async function sign_up(user_email, user_password) {
   let options = {
     method: "POST",

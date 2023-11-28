@@ -8,20 +8,19 @@ const error_message = document.querySelector("#login-error");
 const login_btn = document.querySelector(".login-btn");
 const spinner = document.querySelector(".spinner");
 
+// Updating user_email and user_password values on input
 document.querySelector("#email_login").addEventListener("input", function () {
   user_email = document.querySelector("#email_login").value;
-  // console.log(user_email);
 });
 
 document.querySelector("#password_login").addEventListener("input", function () {
   user_password = document.querySelector("#password_login").value;
-  // console.log(user_password);
 });
 
+// Validate on submit
 document.querySelector(".log-in-form").addEventListener("submit", function (event) {
   event.preventDefault();
   validate_input();
-  // fetch_users();
 });
 
 // ##################################################
@@ -49,7 +48,6 @@ async function fetch_users() {
     spinner.classList.remove("hidden");
     const response = await fetch("http://localhost:3000/users");
     const users = await response.json();
-    // console.log(users);
     validate_login(users);
   } catch (error) {
     console.log(error);
@@ -83,6 +81,7 @@ function login_success(user_email) {
   password_input_field.classList.remove("error-border");
   email_input_field.classList.add("success-border");
   password_input_field.classList.add("success-border");
+  // Intended delay to show success animation
   setTimeout(function () {
     start_session(user_email);
   }, 500);
@@ -106,7 +105,6 @@ function login_error() {
 // ##################################################
 
 function start_session(user_email) {
-  // alert("You have successfully logged in!");
   sessionStorage.setItem("email", user_email);
   login_btn.classList.remove("hidden");
   window.location.href = "productview.html";

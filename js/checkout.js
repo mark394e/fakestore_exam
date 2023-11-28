@@ -19,11 +19,42 @@ const expiry_date_RegEx = /^(0[1-9]|1[0-2])\/\d{2}$/; // allow only 1-12 for mon
 
 // #####################################################
 
+// Validation on blur
 zipcode_input_field.addEventListener("blur", function (e) {
   let input_zipcode = e.target.value;
   zipcode_input_field.classList.remove("success-border");
   validate_zipcode_input(input_zipcode);
 });
+
+card_number_input_field.addEventListener("blur", function (e) {
+  let input_card_number = e.target.value;
+  card_number_input_field.classList.remove("success-border");
+  validate_card_number(input_card_number);
+});
+
+cvv_input_field.addEventListener("blur", function (e) {
+  let input_cvv = e.target.value;
+  cvv_input_field.classList.remove("success-border");
+  validate_cvv_input(input_cvv);
+});
+
+expiry_input_field.addEventListener("blur", function (e) {
+  let input_expiry = e.target.value;
+  expiry_input_field.classList.remove("success-border");
+  validate_expiry(input_expiry);
+});
+
+// Validation on submit
+checkout_form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const zipcode = validate_zipcode_input(zipcode_input_field.value);
+  const card_number = validate_card_number(card_number_input_field.value);
+  const cvv = validate_cvv_input(cvv_input_field.value);
+  const expiry = validate_expiry(expiry_input_field.value);
+  validate_checkout(zipcode, card_number, cvv, expiry);
+});
+
+// #####################################################
 
 function validate_zipcode_input(input_zipcode) {
   let isValidZipcode = only_numbers_RegEx.test(input_zipcode);
@@ -44,12 +75,6 @@ function validate_zipcode_input(input_zipcode) {
 
 // #####################################################
 
-card_number_input_field.addEventListener("blur", function (e) {
-  let input_card_number = e.target.value;
-  card_number_input_field.classList.remove("success-border");
-  validate_card_number(input_card_number);
-});
-
 function validate_card_number(input_card_number) {
   let isValidCardNumber = only_numbers_RegEx.test(input_card_number);
 
@@ -68,12 +93,6 @@ function validate_card_number(input_card_number) {
 }
 
 // #####################################################
-
-cvv_input_field.addEventListener("blur", function (e) {
-  let input_cvv = e.target.value;
-  cvv_input_field.classList.remove("success-border");
-  validate_cvv_input(input_cvv);
-});
 
 function validate_cvv_input(input_cvv) {
   let isValidCvv = only_numbers_RegEx.test(input_cvv);
@@ -94,12 +113,6 @@ function validate_cvv_input(input_cvv) {
 
 // #####################################################
 
-expiry_input_field.addEventListener("blur", function (e) {
-  let input_expiry = e.target.value;
-  expiry_input_field.classList.remove("success-border");
-  validate_expiry(input_expiry);
-});
-
 function validate_expiry(input_expiry) {
   let isValidExpiryDate = expiry_date_RegEx.test(input_expiry);
 
@@ -118,15 +131,6 @@ function validate_expiry(input_expiry) {
 }
 
 // #####################################################
-
-checkout_form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const zipcode = validate_zipcode_input(zipcode_input_field.value);
-  const card_number = validate_card_number(card_number_input_field.value);
-  const cvv = validate_cvv_input(cvv_input_field.value);
-  const expiry = validate_expiry(expiry_input_field.value);
-  validate_checkout(zipcode, card_number, cvv, expiry);
-});
 
 function validate_checkout(zipcode, card_number, cvv, expiry) {
   const isAcceptedTerms = document.querySelector("#terms").checked;
@@ -151,6 +155,8 @@ function validate_checkout(zipcode, card_number, cvv, expiry) {
     show_success_message();
   }, 500);
 }
+
+// #####################################################
 
 function show_success_message() {
   checkout_success_message.classList.remove("hidden");
