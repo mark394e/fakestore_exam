@@ -74,6 +74,11 @@
       "email": "a@a.dk",
       "password": "Ayanami1997!",
       "id": 14
+    },
+    {
+      "email": "b@b.dk",
+      "password": "Bbbbbbbb1234!",
+      "id": 15
     }
   ]
 }

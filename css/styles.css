@@ -123,6 +123,10 @@ button {
   text-decoration: none;
 }
 
+circle.red-dot-on-cart {
+  fill: var(--danger_color);
+}
+
 .cta {
   background-color: var(--tertiary_color);
   font-weight: var(--font-weight_semi_bold);
@@ -183,7 +187,7 @@ button {
 /* Global navigation */
 /* ### Menu navigation ### */
 nav.menu-nav {
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
   padding: 0.8rem;
   background-color: var(--primary_color);
   box-shadow: var(--box-shadow);

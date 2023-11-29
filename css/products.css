@@ -1,4 +1,4 @@
-@import "styles.css";
+@import 'styles.css';
 
 /* #### BACK TO TOP BUTTON - TEST #### */
 button.back-to-top {
@@ -29,6 +29,7 @@ svg.back-to-top-icon {
 header.header-navigation {
   position: sticky;
   top: 0;
+  z-index: 2;
 }
 /* ######## Loader element ########
 for letting the user know that the system is working behind the scenes
@@ -58,7 +59,7 @@ svg#loader-element {
 /* #### Filterbutton nav #### */
 nav#filter-buttons-navigation {
   position: sticky;
-  top: 72.4px; /* placed directly under the main navigation */
+  top: 70.4px; /* placed directly under the main navigation */
 }
 div.top-level-button-wrapper {
   width: 100%;
@@ -417,9 +418,6 @@ div.add-product-button button.add-product-success,
 div.btn-wrapper-singleview button.add-product-success {
   background-color: var(--success_color);
   color: var(--overlay_color);
-}
-circle.red-dot-on-cart {
-  fill: var(--danger_color);
 }
 
 /* ############### RESPONSIVE SETTINGS ############### */
